@@ -8,7 +8,6 @@ const binderSchema = new Schema({
         type: String,
         required: true
     },
-    docs: [{type: Schema.Types.ObjectId, ref: "Docs"}],
     notes: [{type: Schema.Types.ObjectId, ref: "Notes"}],
     maps: [{type: Schema.Types.ObjectId, ref: "Maps"}]
 });

@@ -2,14 +2,19 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const noteSchema = new Schema({
-    title: {
+const tokenSchema = new Schema({
+    position: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     content: {
         type: String,
         required: true
+    },
+    tokenImg: {
+        type: String,
+        required: true,
     }
 })
 
