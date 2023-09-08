@@ -15,4 +15,4 @@ const noteSchema = new Schema({
 
 const Notes = mongoose.model('Notes', noteSchema);
 
-module.exports = Clothes;
+module.exports = Notes;

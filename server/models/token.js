@@ -8,6 +8,10 @@ const tokenSchema = new Schema({
         required: true,
         unique: true
     },
+    title: {
+        type: String,
+        required: true,
+    },
     content: {
         type: String,
         required: true
@@ -18,6 +22,6 @@ const tokenSchema = new Schema({
     }
 })
 
-const Notes = mongoose.model('Notes', noteSchema);
+const Token = mongoose.model('Tokens', tokenSchema);
 
-module.exports = Clothes;
+module.exports = Token;

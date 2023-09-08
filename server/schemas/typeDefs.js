@@ -5,7 +5,36 @@ type User {
     _id: ID
     username: String
     email: String
+    binders: [Binder]
   }
+
+type Binder {
+  _id: ID
+  name: String
+  notes: [Note]
+  maps: [Map]
+}
+
+type Map {
+  _id: ID
+  name: String
+  imageUrl: String
+  tokens: [Token]
+}
+
+type Note {
+  _id: ID
+  title: String
+  content: String
+}
+
+type Token {
+  _id: ID
+  position: String
+  title: String
+  content: String
+  tokenImg: String
+}
 
   type Auth {
     token: ID
@@ -14,6 +43,12 @@ type User {
 
   type Query {
     user: User
+    binder(_id: ID!): Binder
+    binders: [Binders]
+    map(_id: ID!): Map
+    maps: [Maps]
+    note(_id; ID!): Note
+    notes: [Note]
 }
 
 type Mutation {
