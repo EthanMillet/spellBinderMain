@@ -54,6 +54,10 @@ type Token {
 type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
+    addBinder(name: String!): Binder
+    addMap(name: String!, mapUrl: String!): Map
+    addNote(title: String!, content: String!): Note
+    addToken(position: String!, title: String!, content: String!, tokenImg: String!): Token
 }
 `
 
