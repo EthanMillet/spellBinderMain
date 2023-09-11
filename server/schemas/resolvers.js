@@ -1,6 +1,7 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { User } = require('../models')
 const { signToken } = require('../utils/auth');
+const Binders = require('../models/binder');
 
 
 const resolvers = {
@@ -66,6 +67,38 @@ const resolvers = {
               {_id: args.map},
               {$push: {tokens: token.id}})
           }
+        },
+        deleteBinder: async(parent, args, context) => {
+          if (context.user) {
+            await Binder.findOneAndDelete({_id, userId: context.user._id});
+            await User.findByIdandUpdate(context.user._id, {$pull: { outfits: _id }});
+            return _id;
+          }
+          throw new AuthenticationError('Not logged in');
+        },
+        deleteNote: async(parent, args, context) => {
+          if (context.user) {
+            await Note.findOneAndDelete({_id, userId: context.user._id});
+            await User.findByIdandUpdate(context.user._id, {$pull: { outfits: _id }});
+            return _id;
+          }
+          throw new AuthenticationError('Not logged in');
+        },
+        deleteMap: async(parent, args, context) => {
+          if (context.user) {
+            await map.findOneAndDelete({_id, userId: context.user._id});
+            await User.findByIdandUpdate(context.user._id, {$pull: { outfits: _id }});
+            return _id;
+          }
+          throw new AuthenticationError('Not logged in');
+        },
+        deleteToken: async(parent, args, context) => {
+          if (context.user) {
+            await Token.findOneAndDelete({_id, userId: context.user._id});
+            await User.findByIdandUpdate(context.user._id, {$pull: { outfits: _id }});
+            return _id;
+          }
+          throw new AuthenticationError('Not logged in');
         },
         login: async (parent, { email, password }) => {
             const user = await User.findOne({ email });

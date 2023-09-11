@@ -58,6 +58,10 @@ type Mutation {
     addMap(name: String!, mapUrl: String!): Map
     addNote(title: String!, content: String!): Note
     addToken(position: String!, title: String!, content: String!, tokenImg: String!): Token
+    deleteBinder(id: ID!): Binder
+    deleteMap(id: ID!): Map
+    deleteNote(id: ID!): Note
+    deleteToken(id: ID!): Token
 }
 `
 
