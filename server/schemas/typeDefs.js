@@ -44,10 +44,10 @@ type Token {
   type Query {
     user: User
     binder(_id: ID!): Binder
-    binders: [Binders]
+
     map(_id: ID!): Map
-    maps: [Maps]
-    note(_id; ID!): Note
+ 
+    note(_id: ID!): Note
     notes: [Note]
 }
 

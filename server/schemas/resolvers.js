@@ -1,7 +1,6 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User } = require('../models')
+const { User, Binder, Maps, Note, Token } = require('../models')
 const { signToken } = require('../utils/auth');
-const Binders = require('../models/binder');
 
 
 const resolvers = {
@@ -22,7 +21,7 @@ const resolvers = {
           )
         },
         notes: async(parent, args, context) => {
-          return await Notes.findById(_id);
+          return await Note.findById(_id);
         }
               
     },
@@ -36,7 +35,7 @@ const resolvers = {
           if (context.user) {
             const binder = await Binder.create(args);
 
-            const user = await User.findOneAndUpdate(
+            await User.findOneAndUpdate(
               {_id: context.user._id},
               {$push: {binders: binder.id}})
           }
@@ -45,7 +44,7 @@ const resolvers = {
           if (context.user) {
             const note = await Note.create(args);
 
-            const user = await User.findOneAndUpdate(
+            await User.findOneAndUpdate(
               {_id: context.user._id},
               {$push: {notes: note.id}})
           }
@@ -54,7 +53,7 @@ const resolvers = {
           if (context.user) {
             const map = await Maps.create(args);
 
-            const user = await User.findOneAndUpdate(
+            await User.findOneAndUpdate(
               {_id: context.user._id},
               {$push: {maps: map.id}})
           }
@@ -63,7 +62,7 @@ const resolvers = {
           if (context.user) {
             const token = await Token.create(args);
 
-            const map = await Map.findOneAndUpdate(
+            await Map.findOneAndUpdate(
               {_id: args.map},
               {$push: {tokens: token.id}})
           }
@@ -86,7 +85,7 @@ const resolvers = {
         },
         deleteMap: async(parent, args, context) => {
           if (context.user) {
-            await map.findOneAndDelete({_id, userId: context.user._id});
+            await Maps.findOneAndDelete({_id, userId: context.user._id});
             await User.findByIdandUpdate(context.user._id, {$pull: { outfits: _id }});
             return _id;
           }

@@ -1,4 +1,4 @@
-const User = require('./Users')
+const User = require('./user')
 const Maps = require('./map')
 const Binder = require('./binder')
 const Notes = require('./notes')
