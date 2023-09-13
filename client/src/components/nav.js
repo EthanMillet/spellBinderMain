@@ -225,14 +225,10 @@ const customStyles = {
           <Link className='button' to='/profile'>
             <span>PROFILE</span>
           </Link>
-          <Link className='button' to='/create'>
-            <span>CREATE</span>
-          </Link>
         </div>
   
         <header className='header'>
           <div className='header'>
-            <input className='search' placeholder='Find outfits...'></input>
             <div>
               {showNavigation()}
             </div>

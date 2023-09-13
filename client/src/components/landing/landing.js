@@ -5,7 +5,7 @@ const Landing = () => {
     return (
         <div className="landing">
             <div className="landing-header">
-                <h1>Look At All These Outfits</h1>
+                <h1>Spell Binder</h1>
             </div>
         </div>
     );

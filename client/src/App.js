@@ -8,8 +8,12 @@ import {
   createHttpLink,
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import Nav from './components/nav.js'
-import Landing from './components/landing/landing'
+import Nav from './components/nav.js';
+import Landing from './components/landing/landing';
+import Profile from './components/profile/profile';
+import Binder from './components/profile/binder';
+import mapPage from './components/profile/map';
+import Note from './components/profile/note';
 
 const httpLink = createHttpLink({
   uri: process.env.herokuLink || 'http://localhost:3001/graphql',
@@ -35,10 +39,16 @@ function App() {
       <Nav />
       <Routes>
 
-        <Route path="/" element={<Landing />}>
-        </Route>
-        
-        
+        <Route path="/" element={<Landing />}></Route>
+
+        <Route path="/profile" element={<Profile />}></Route>
+
+        <Route path="/binder" element={<Binder />}></Route>
+
+        <Route path="/map" element={<mapPage />}></Route>
+
+        <Route path="/note" element={<Note />}></Route>
+
       </Routes>
 
       </ApolloProvider>
