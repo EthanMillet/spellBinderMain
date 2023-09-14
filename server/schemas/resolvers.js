@@ -37,7 +37,8 @@ const resolvers = {
 
             await User.findOneAndUpdate(
               {_id: context.user._id},
-              {$push: {binders: binder.id}})
+              {$push: {binders: binder}})
+              return binder;
           }
         },
         addNote: async (parent, args, context) => {

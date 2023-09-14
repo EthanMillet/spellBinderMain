@@ -23,12 +23,8 @@ export const LOGIN = gql`
 `;
 
 export const ADD_BINDER = gql`
-    mutation addBinder(
-        $name: String!
-    ) {
-        addOutfit(
-            name: $name
-        ) {
+    mutation addBinder($name: String!) {
+        addBinder(name: $name) {
             _id
             name
         }
