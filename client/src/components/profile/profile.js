@@ -5,6 +5,7 @@ import { useQuery } from '@apollo/client';
 import { ADD_BINDER } from '../../utils/mutations';
 import { GET_USER } from '../../utils/queries';
 
+import { Link } from 'react-router-dom';
 
 function ProfileStation() {
     const [formState, setFormState] = useState({name: ''});
@@ -50,7 +51,7 @@ function ProfileStation() {
         <div>
             {data.user.binders.map((binders) => (
                 <div key={binders._id}>
-                    <h3>{binders.name}</h3>
+                    <Link to="/binder"><span>{binders.name}</span></Link>
                 </div>
             ))}
         </div>
