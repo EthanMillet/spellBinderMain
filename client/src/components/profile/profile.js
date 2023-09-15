@@ -51,7 +51,7 @@ function ProfileStation() {
         <div>
             {data.user.binders.map((binders) => (
                 <div key={binders._id}>
-                    <Link to="/binder"><span>{binders.name}</span></Link>
+                    <Link to="/binder" state={{from: binders._id}}><span>{binders.name}</span></Link>
                 </div>
             ))}
         </div>

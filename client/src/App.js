@@ -44,8 +44,8 @@ function App() {
         <Route path="/profile" element={<Profile />}></Route>
 
         <Route path="/binder" element={<Binder/>}></Route>
-        <Route path="/map" element={<mapPage />}></Route>
-        <Route path="/note" element={<Note />}></Route>
+
+
 
 
 

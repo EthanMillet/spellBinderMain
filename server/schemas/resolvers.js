@@ -14,11 +14,8 @@ const resolvers = {
             }
               throw new AuthenticationError('Not logged in');
             },
-        binder: async(parent, args, context) => {
-          return await Binder.findById(_id).populate(
-            [{ path: 'maps', strictPopulate: false }],
-            [{ path: 'notes', strictPopulate: false }]
-          )
+        binder: async(parent,{_id}) => {
+          return await Binder.findById(_id)
         },
         notes: async(parent, args, context) => {
           return await Note.findById(_id);
