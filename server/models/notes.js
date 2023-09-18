@@ -10,7 +10,8 @@ const noteSchema = new Schema({
     content: {
         type: String,
         required: true
-    }
+    },
+    binderID: {type: Schema.Types.ObjectId, ref: 'Binders'}
 })
 
 const Notes = mongoose.model('Notes', noteSchema);

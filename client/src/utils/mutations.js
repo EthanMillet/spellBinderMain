@@ -32,21 +32,27 @@ export const ADD_BINDER = gql`
 `
 
 export const ADD_MAP = gql`
-    mutation addMap($name: String!, $imageUrl: String!) {
-        addMap(name: $name, imageUrl: $imageUrl) {
+    mutation addMap($name: String!, $imageUrl: String!, $binderID: String!) {
+        addMap(name: $name, imageUrl: $imageUrl, binderID: $binderID) {
             _id
             name
             imageUrl
+            binderID {
+              _id
+            }
         }
     }
 `
 
 export const ADD_NOTE = gql`
-    mutation addNote($title: String, $content: String) {
-        addNote(title: $title, content: $content) {
+    mutation addNote($title: String!, $content: String!, $binderID: String!) {
+        addNote(title: $title, content: $content, binderID: $binderID) {
             _id
             title
             content
+            binderID {
+              _id
+            }
         }
     }
 `

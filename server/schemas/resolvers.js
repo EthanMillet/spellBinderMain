@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Binder, Maps, Note, Token } = require('../models')
+const { User, Binder, Maps, Notes, Token } = require('../models')
 const { signToken } = require('../utils/auth');
 
 
@@ -17,8 +17,11 @@ const resolvers = {
         binder: async(parent,{_id}) => {
           return await Binder.findById(_id)
         },
+        map: async (parent, args, context) => {
+          return await Maps.findById(args)
+        },
         notes: async(parent, args, context) => {
-          return await Note.findById(_id);
+          return await Note.findById(args);
         }
               
     },
@@ -39,22 +42,22 @@ const resolvers = {
           }
         },
         addNote: async (parent, args, context) => {
-          if (context.user) {
-            const note = await Note.create(args);
 
-            await User.findOneAndUpdate(
-              {_id: context.user._id},
+            const note = await Notes.create(args);
+
+            await Binder.findOneAndUpdate(
+              {_id: args.binderID},
               {$push: {notes: note.id}})
-          }
+          
         },
         addMap: async (parent, args, context) => {
           if (context.user) {
             const map = await Maps.create(args);
 
-            await User.findOneAndUpdate(
-              {_id: context.user._id},
+            await Binder.findOneAndUpdate(
+              {_id: args.binderID},
               {$push: {maps: map.id}})
-          }
+            }
         },
         addToken: async (parent, args, context) => {
           if (context.user) {

@@ -20,12 +20,14 @@ type Map {
   name: String
   imageUrl: String
   tokens: [Token]
+  binderID: Binder
 }
 
 type Note {
   _id: ID
   title: String
   content: String
+  binderID: Binder
 }
 
 type Token {
@@ -44,9 +46,7 @@ type Token {
   type Query {
     user: User
     binder(_id: ID!): Binder
-
     map(_id: ID!): Map
- 
     note(_id: ID!): Note
     notes: [Note]
 }
@@ -55,8 +55,8 @@ type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addBinder(name: String!): Binder
-    addMap(name: String!, mapUrl: String!): Map
-    addNote(title: String!, content: String!): Note
+    addMap(name: String!, imageUrl: String!, binderID: String!): Map
+    addNote(title: String!, content: String!, binderID: String!): Note
     addToken(position: String!, title: String!, content: String!, tokenImg: String!): Token
     deleteBinder(id: ID!): Binder
     deleteMap(id: ID!): Map

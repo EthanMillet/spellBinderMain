@@ -36,7 +36,7 @@ const {loading, error, data } = useQuery(GET_BINDER, {
         try {
             await addMap({
                 variables: {
-                    name: mapFormState.name, imageUrl: mapFormState.imageUrl}
+                    name: mapFormState.name, imageUrl: mapFormState.imageUrl, binderID: from}
             });
         } catch (e) {
             console.log(e)
@@ -57,7 +57,7 @@ const {loading, error, data } = useQuery(GET_BINDER, {
         try {
             await addNote({
                 variables: {
-                    title: noteFormState.name, content: noteFormState.content}
+                    title: noteFormState.title, content: noteFormState.content, binderID: from}
             });
         } catch (e) {
             console.log(e);
