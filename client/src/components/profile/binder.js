@@ -58,6 +58,7 @@ const {loading, error, data } = useQuery(GET_BINDER, {
             await addNote({
                 variables: {
                     title: noteFormState.title, content: noteFormState.content, binderID: from}
+                    
             });
         } catch (e) {
             console.log(e);
@@ -67,7 +68,7 @@ const {loading, error, data } = useQuery(GET_BINDER, {
     const handleNoteFormChange = (event) => {
         const { name, value } = event.target;
         setNoteFormState({
-            ...mapFormState,
+            ...noteFormState,
             [name]: value
         });
     }
@@ -102,21 +103,23 @@ return (
 
 {/* create note */}
 <form onSubmit={handleNoteFormSubmit}>
-    <label htmlFor="title">Title</label>
+    <label htmlFor="title">Title
     <input
-        placeholder='Note Title'
+        placeholder='title'
         name='title'
         type='title'
         id='title'
         onChange={handleNoteFormChange}/>
+</label>
 
-    <label htmlFor='content'>Content</label>
+    <label htmlFor='content'>Content
     <input 
         placeholder='Content'
         name='content'
         type='content'
         id='content'
         onChange={handleNoteFormChange}/>
+</label>
 
 <button type="submit">Submit</button>
 </form>
