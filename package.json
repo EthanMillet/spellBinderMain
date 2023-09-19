@@ -20,6 +20,8 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
+    "@ckeditor/ckeditor5-build-classic": "^39.0.2",
+    "@ckeditor/ckeditor5-react": "^6.1.0",
     "bcrypt": "^5.1.0",
     "bcryptjs": "^2.4.3",
     "idb-promise": "^0.0.3"

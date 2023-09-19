@@ -7,6 +7,8 @@ import { Link, useLocation } from 'react-router-dom';
 import { GET_BINDER, GET_USER, GET_MAP, GET_NOTE } from '../../utils/queries';
 import { ADD_NOTE, ADD_MAP } from '../../utils/mutations';
 
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import Editor from 'ckeditor5-custom-build/build/ckeditor';
 
 
 function BinderStation() {
@@ -52,6 +54,23 @@ const {loading, error, data } = useQuery(GET_BINDER, {
     };
 
     // create note 
+    const editorConfiguration = {
+        toolbar: [				'heading',
+        '|',
+        'bold',
+        'italic',
+        'bulletedList',
+        'numberedList',
+        '|',
+        'outdent',
+        'indent',
+        '|',
+        'blockQuote',
+        'insertTable',
+        'undo',
+        'redo']
+    };
+
     const handleNoteFormSubmit = async (event) => {
         event.preventDefault();
         try {
@@ -124,6 +143,17 @@ return (
 <button type="submit">Submit</button>
 </form>
 
+
+<div>
+                <CKEditor
+                    editor={ Editor }
+                    config={ editorConfiguration }
+                    data="<p></p>"
+
+                    onChange={ ( event, editor ) => {
+                        const data = editor.getData();
+                    } }/>
+</div>
 {/* access map */}
 {/* access note */}
 </div>
