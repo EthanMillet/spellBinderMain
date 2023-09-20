@@ -15,15 +15,16 @@ const resolvers = {
               throw new AuthenticationError('Not logged in');
             },
         binder: async(parent,{_id}) => {
-          return await Binder.findById(_id)
+          return await Binder.findById(_id).populate(
+            [{path: 'maps', strictPopulate: false}],
+          )
         },
         map: async (parent, args, context) => {
           return await Maps.findById(args)
         },
         notes: async(parent, args, context) => {
           return await Note.findById(args);
-        }
-              
+        }     
     },
     Mutation: {
         addUser: async (parent, args, context) => {
