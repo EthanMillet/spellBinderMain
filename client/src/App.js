@@ -14,6 +14,8 @@ import Profile from './components/profile/profile';
 import Binder from './components/profile/binder';
 import mapPage from './components/profile/map';
 import Note from './components/profile/note';
+import MapCreatePage from './components/profile/createMap';
+import NoteCreatePage from './components/profile/createNote'
 
 const httpLink = createHttpLink({
   uri: process.env.herokuLink || 'http://localhost:3001/graphql',
@@ -46,6 +48,8 @@ function App() {
         <Route path="/binder" element={<Binder/>}></Route>
 
 
+        <Route path="/createNote" element={<NoteCreatePage/>}></Route>
+        <Route path="/createMap" element={<MapCreatePage/>}></Route>
 
 
 
