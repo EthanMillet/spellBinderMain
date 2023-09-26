@@ -16,14 +16,16 @@ const resolvers = {
             },
         binder: async(parent,{_id}) => {
           return await Binder.findById(_id).populate(
-            [{path: 'maps', strictPopulate: false}],
+            [{ path: 'maps', strictPopulate: false  },
+            { path: 'notes', strictPopulate: false }
+          ],
           )
         },
         map: async (parent, args, context) => {
           return await Maps.findById(args)
         },
         notes: async(parent, args, context) => {
-          return await Note.findById(args);
+          return await Notes.findById(args);
         }     
     },
     Mutation: {

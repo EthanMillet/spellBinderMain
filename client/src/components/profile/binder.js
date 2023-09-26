@@ -34,13 +34,22 @@ return (
 {/* access map */}
     <div>
         {data.binder.maps.map((maps) => (
-            <div>
+            <div key={maps._id}>
                 <Link to="/map" stat={{from: maps._id}}><span>{maps.name}</span></Link>
             </div>
 
         ))}
     </div>
 {/* access note */}
+<hr></hr>
+<div>
+        {data.binder.notes.map((notes) => (
+            <div key={notes._id}>
+                <Link to="/note" stat={{from: notes._id}}><span>{notes.title}</span></Link>
+            </div>
+
+        ))}
+    </div>
 </div>
 )
 

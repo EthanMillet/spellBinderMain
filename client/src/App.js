@@ -12,7 +12,7 @@ import Nav from './components/nav.js';
 import Landing from './components/landing/landing';
 import Profile from './components/profile/profile';
 import Binder from './components/profile/binder';
-import mapPage from './components/profile/map';
+import MapPage from './components/profile/map';
 import Note from './components/profile/note';
 import MapCreatePage from './components/profile/createMap';
 import NoteCreatePage from './components/profile/createNote'
@@ -47,7 +47,8 @@ function App() {
 
         <Route path="/binder" element={<Binder/>}></Route>
 
-
+        <Route path="/map" element={<MapPage/>}></Route>
+        <Route path="/note" element={<Note/>}></Route>
         <Route path="/createNote" element={<NoteCreatePage/>}></Route>
         <Route path="/createMap" element={<MapCreatePage/>}></Route>
 
