@@ -1,84 +1,113 @@
-// start on monday
-// import
-// fill in links
-// edit or view notes 
-// use ckeditor
-// load with the data property
-
 import React from 'react';
 import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { useQuery } from '@apollo/client';
 import { Link, useLocation } from 'react-router-dom';
 
-import { GET_BINDER } from '../../utils/queries';
-import { ADD_MAP } from '../../utils/mutations';
+import { GET_BINDER, GET_USER, GET_MAP, GET_NOTE } from '../../utils/queries';
+import { ADD_NOTE, ADD_MAP } from '../../utils/mutations';
 
-function CreateMapStation() {
+import { CKEditor } from '@ckeditor/ckeditor5-react';
+import Editor from 'ckeditor5-custom-build/build/ckeditor';
+
+function CreateNoteStation() {
     const location = useLocation()
     const { from } = location.state
 
-    const [addMap] = useMutation(ADD_MAP);
-    const [mapFormState, setMapFormState] = useState({name: '', imageUrl: ''});
+    const [addNote] = useMutation(ADD_NOTE);
+    const [noteFormState, setNoteFormState] = useState({title: '', content: ''});
 
-    const {loading, error, data } = useQuery(GET_BINDER, {
+    const {loading, error, data } = useQuery(GET_NOTE, {
         variables: { _id: from },
     });
     
         if(loading) return "Loading..."
         if(error) return `${error.message}`;
 
+            // create note 
+    const editorConfiguration = {
+        toolbar: [				'heading',
+        '|',
+        'bold',
+        'italic',
+        'bulletedList',
+        'numberedList',
+        '|',
+        'outdent',
+        'indent',
+        '|',
+        'blockQuote',
+        'insertTable',
+        'undo',
+        'redo']
+    };
 
-    // create map 
-    const handleMapFormSubmit = async (event) => {
+    const handleNoteFormSubmit = async (event) => {
         event.preventDefault();
         try {
-            await addMap({
+            await addNote({
                 variables: {
-                    name: mapFormState.name, imageUrl: mapFormState.imageUrl, binderID: from}
+                    title: noteFormState.title, content: noteFormState.content, binderID: from}
+                    
             });
         } catch (e) {
-            console.log(e)
+            console.log(e);
         }
     };
 
-    const handleMapFormChange = (event) => {
+    const handleNoteFormChange = (event) => {
         const { name, value } = event.target;
-        setMapFormState({
-            ...mapFormState,
+        setNoteFormState({
+            ...noteFormState,
             [name]: value
         });
-    };
+    }
 
-    return (
+    return(
         <div>
-    <div>
-        <h1>{ data.binder.name }</h1>
+
+<div>
+        <h1>{ data.notes._id }</h1>
         <h2>{from}</h2>
     </div>
-
-{/* create map */}
-<form onSubmit={handleMapFormSubmit}>
-<label htmlFor="name">name</label>
+    
+            {/* create note */}
+<form onSubmit={handleNoteFormSubmit}>
+    <label htmlFor="title">Title
     <input
-        placeholder='name'
-        name='name'
-        type='name'
-        id='name'
-        onChange={handleMapFormChange}/>
+        placeholder='title'
+        name='title'
+        type='title'
+        id='title'
+        onChange={handleNoteFormChange}/>
+</label>
 
-    <label htmlFor='imageUrl'>imageUrl</label>
+    <label htmlFor='content'>Content
     <input 
-        placeholder='imageUrl'
-        name='imageUrl'
-        type='imageUrl'
-        id='imageUrl'
-        onChange={handleMapFormChange}/>
+        placeholder='Content'
+        name='content'
+        type='content'
+        id='content'
+        onChange={handleNoteFormChange}/>
+</label>
 
 <button type="submit">Submit</button>
 </form>
+
+
+<div>
+                <CKEditor
+                    editor={ Editor }
+                    config={ editorConfiguration }
+                    data="<p></p>"
+
+                    onChange={ ( event, editor ) => {
+                        const data = editor.getData();
+                    } }/>
 </div>
+
+        </div>
     )
 }
 
-export default CreateMapStation;
+export default CreateNoteStation;
