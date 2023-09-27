@@ -67,7 +67,7 @@ function CreateNoteStation() {
         <div>
 
 <div>
-        <h1>{ data.notes._id }</h1>
+        <h1>{ data.note._id}</h1>
         <h2>{from}</h2>
     </div>
     

@@ -21,11 +21,11 @@ const resolvers = {
           ],
           )
         },
-        map: async (parent, args, context) => {
-          return await Maps.findById(args)
+        map: async (parent, {_id}) => {
+          return await Maps.findById(_id)
         },
-        notes: async(parent, args, context) => {
-          return await Notes.findById(args);
+        note: async(parent, {_id}) => {
+          return await Notes.findById(_id);
         }     
     },
     Mutation: {
