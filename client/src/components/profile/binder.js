@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 import { Link, useLocation } from 'react-router-dom';
-
+import '../../index.css'
 import { GET_BINDER} from '../../utils/queries';
 
 
