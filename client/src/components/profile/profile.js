@@ -7,6 +7,8 @@ import { GET_USER } from '../../utils/queries';
 
 import { Link } from 'react-router-dom';
 
+import './map.css'
+
 function ProfileStation() {
     const [formState, setFormState] = useState({name: ''});
     const [addBinder] = useMutation(ADD_BINDER);
@@ -54,6 +56,29 @@ function ProfileStation() {
                     <Link to="/binder" state={{from: binders._id}}><span>{binders.name}</span></Link>
                 </div>
             ))}
+        </div>
+
+
+        <div class="screen">  
+            <div class="screen-image"></div>  
+            <div class="screen-overlay"></div>  
+            <div class="screen-content">
+                <i class="screen-icon fa-brands fa-codepen"></i>
+                <div class="screen-user">
+                    <span class="name" data-value="CODEPEN">Maps</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="screen">  
+            <div class="screen-image"></div>  
+            <div class="screen-overlay"></div>  
+            <div class="screen-content">
+                <i class="screen-icon fa-brands fa-codepen"></i>
+                <div class="screen-user">
+                    <span class="name" data-value="CODEPEN">Notes</span>
+                </div>
+            </div>
         </div>
         </div>
     );
