@@ -58,28 +58,6 @@ function ProfileStation() {
             ))}
         </div>
 
-
-        <div class="screen">  
-            <div class="screen-image"></div>  
-            <div class="screen-overlay"></div>  
-            <div class="screen-content">
-                <i class="screen-icon fa-brands fa-codepen"></i>
-                <div class="screen-user">
-                    <span class="name" data-value="CODEPEN">Maps</span>
-                </div>
-            </div>
-        </div>
-
-        <div class="screen">  
-            <div class="screen-image"></div>  
-            <div class="screen-overlay"></div>  
-            <div class="screen-content">
-                <i class="screen-icon fa-brands fa-codepen"></i>
-                <div class="screen-user">
-                    <span class="name" data-value="CODEPEN">Notes</span>
-                </div>
-            </div>
-        </div>
         </div>
     );
 };

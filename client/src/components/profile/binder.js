@@ -35,7 +35,18 @@ return (
     <div>
         {data.binder.maps.map((maps) => (
             <div key={maps._id}>
-                <Link to="/map" state={{from: maps._id}}><span>{maps.name}</span></Link>
+
+                <div class="screen">  
+                    <div class="screen-image"></div>  
+                    <div class="screen-overlay"></div>  
+                    <div class="screen-content">
+                    <i class="screen-icon fa-brands fa-codepen"></i>
+                <div class="screen-user">
+                    <Link to="/map" state={{from: maps._id}}><span class="name" data-value="CODEPEN">{maps.name}</span></Link>
+                </div>
+                    </div>
+        </div>
+            
             </div>
 
         ))}
@@ -45,11 +56,31 @@ return (
     <div>
         {data.binder.notes.map((notes) => (
             <div key={notes._id}>
-                <Link to="/note" state={{from: notes._id}}><span>{notes.title}</span></Link>
+
+                <div class="screen">  
+            <div class="screen-image"></div>  
+            <div class="screen-overlay"></div>  
+            <div class="screen-content">
+                <i class="screen-icon fa-brands fa-codepen"></i>
+                <div class="screen-user">
+                    <Link to="/note" state={{from: notes._id}}><span class="name" data-value="CODEPEN">{notes.title}</span></Link>
+                </div>
+            </div>
+        </div>
             </div>
 
         ))}
     </div>
+
+
+
+
+
+
+
+
+
+
 </div>
 )
 
