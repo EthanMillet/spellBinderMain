@@ -1,4 +1,3 @@
-import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
@@ -16,6 +15,8 @@ import MapPage from './components/profile/map';
 import Note from './components/profile/note';
 import MapCreatePage from './components/profile/createMap';
 import NoteCreatePage from './components/profile/createNote'
+import Login from './components/login.js';
+import SignUp from './components/signup.js';
 
 const httpLink = createHttpLink({
   uri: process.env.herokuLink || 'http://localhost:3001/graphql',
@@ -51,7 +52,8 @@ function App() {
         <Route path="/note" element={<Note/>}></Route>
         <Route path="/createNote" element={<NoteCreatePage/>}></Route>
         <Route path="/createMap" element={<MapCreatePage/>}></Route>
-
+        <Route path="/login" element={<Login/>}></Route>
+        <Route path="/signup" element={<SignUp/>}></Route>
 
 
       </Routes>

@@ -95,6 +95,14 @@
     gap: 1rem;
     position: relative;
   }
+
+  .screen > .screen-content > .screen-use > a{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+  }
   
   .screen > .screen-content > .screen-user:before,
   .screen > .screen-content > .screen-user:after {
