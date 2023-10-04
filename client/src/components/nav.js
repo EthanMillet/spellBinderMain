@@ -1,9 +1,38 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Styling/nav.css'
+import Auth from '../utils/auth';
 
   const Sidebar = () => {
   
+
+      if (Auth.loggedIn()) {
+        return (
+          <div className='nav'>
+        <div className='side-bar'>
+          <Link className='button' to='/'>
+            <span>HOME</span>
+          </Link>
+          <Link className='button' to='/features'>
+            <span>FEATURES</span>
+          </Link>
+          <Link className='button' to='/showcase'>
+            <span>SHOWCASE</span>
+          </Link>
+
+          <div className='right-bar'>
+          <Link className='button-right' to='/profile'>
+            <span>PROFILE</span>
+          </Link>
+          <button className='login' onClick={() => Auth.logout()}>Logout</button>
+          </div>
+
+        </div>
+      </div>
+
+        );
+    }
+
     return (
       <div className='nav'>
         <div className='side-bar'>

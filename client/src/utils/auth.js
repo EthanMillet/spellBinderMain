@@ -32,7 +32,7 @@ class AuthService {
     // sets the new token in the local storage on log in.
     login(idToken) {
         localStorage.setItem('id_token', idToken);
-        window.location.assign('/')
+        window.location.assign('/profile')
     }
 
     // removes the jwt from local storage on log out. 
