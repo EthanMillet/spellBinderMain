@@ -51,29 +51,42 @@ import './Styling/signIn.css'
     return (
       <div className='container' style={{width: "100%"}}>
               <div className='login-modal'>
-                <div className='modal-header'>
-                  <h2>Register</h2>
+
+              <div className='navContainer'>
+              <Link to="/login" className='navButton'><button className='logIn'>Log In</button></Link>
+                <button className='navButton'>Sign Up</button>
                 </div>
+
+                <div className='modal-header'>
+                  <h2>Spell Binder</h2>
+                </div>
+
                 <div className='modal-body'>
-                  <form onSubmit={handleSubmitRegister}>
-                    <label htmlFor="username"> User Name:</label>
+                  
+                  <form className='form-body' onSubmit={handleSubmitRegister}>
+
+                    <label className='label' htmlFor="username"> User Name</label>
                     <input
-                      placeholder="User Name"
+                    className='input'
+                      placeholder="Enter Your Username"
                       name="username"
                       type="username"
                       id="username"
                       onChange={handleRegister} />
-  
-                    <label htmlFor="email">Email: </label>
+  <hr className='form-break'></hr>
+                    <label className='label' htmlFor="email">Email Address </label>
                     <input
-                      placeholder="email@test.com"
+                    className='input'
+                      placeholder="Enter Your Email"
                       name="email"
                       type="email"
                       id="email"
                       onChange={handleRegister} />
-                    <label htmlFor="pwd">Password: </label>
+<hr className='form-break'></hr>
+                    <label className='label' htmlFor="pwd">Password </label>
                     <input
-                      placeholder="******"
+                    className='input'
+                      placeholder="Enter Your Password"
                       name="password"
                       type="password"
                       id="pwd"
@@ -83,8 +96,10 @@ import './Styling/signIn.css'
                         <p className="error-text">The provided credentials are incorrect</p>
                       </div>
                     ) : null}
-                    <button type="submit">Submit</button>
+                      <hr className='form-break'></hr>
+                    <button className="sumbit-button" type="submit">Submit</button>
                   </form>
+
                 </div>
               </div>
 

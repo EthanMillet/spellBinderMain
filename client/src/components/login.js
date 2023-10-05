@@ -43,9 +43,16 @@ import './Styling/signIn.css'
     return (
       <div className='container' style={{width: "100%"}}>
               <div className='login-modal'>
-                <div className='modal-header'>
-                  <h2>Log in</h2>
+
+                <div className='navContainer'>
+                <button className='navButton'>Log In</button>
+                <Link to="/signup" className='navButton'><button className='signUp'>Sign Up</button></Link>
                 </div>
+
+                <div className='modal-header'>
+                  <h2>Spell Binder</h2>
+                </div>
+                
                 <div className='modal-body'>
                   <form className='form-body' onSubmit={handleSubmitLogin}>
 
@@ -74,7 +81,7 @@ import './Styling/signIn.css'
                     <hr className='form-break'></hr>
 
 
-                    <button className="sumbit-button" type="submit">Submit</button>
+                    <button className="sumbit-button" type="submit">Log In</button>
 
                   </form>
                 </div>
