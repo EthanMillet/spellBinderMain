@@ -16,6 +16,7 @@ const Landing = () => {
                 </div>
 
                 <div className='IntroRight'>
+                    <div className='rightContainer'>
                     <div className='IntroCard'>
                         <h2 className=''>Spell Binder</h2>
                         <p>
@@ -30,47 +31,59 @@ const Landing = () => {
                             or write your novel!
                         </p>
                     </div>
+                    </div>
                 </div>
 
             </div>
 
             <div className='landing-body'>
+
+                <div className='cardContainer'>
                 <div className='bodyCard'>
-                    <img className="bodyImg" src={binder} alt="Binder"/>
-                    <h2>Binders</h2>
-                    <p>
+                    <div className='cardTitle'>
+                        <img className="bodyImg" src={binder} alt="Binder"/>
+                        <h2>Binders</h2>
+                    </div>
+
+                    <div className='cardContent'>
+                    <p className='cardInfo'>
                         Accent colors should be used sparingly to draw attention to 
                         important design elements. 
                         Overuse of accent colors can make your design look haphazard.
                     </p>
-                    <button>See More...</button>
-                </div>
+                    <button className='cardButton'>See More...</button>
+                </div></div>
 
                 <div className='bodyCard'>
-                <div className='bodyCard'>
-                    <img className="bodyImg" src={map} alt="Map"/>
-                    <h2>Maps</h2>
-                    <p>
+                    <div className='cardTitle'>
+                        <img className="bodyImg" src={map} alt="Map"/>
+                        <h2>Maps</h2>
+                    </div>
+
+                    <div className='cardContent'>
+                    <p className='cardInfo'>
                         Accent colors should be used sparingly to draw attention to 
                         important design elements. 
                         Overuse of accent colors can make your design look haphazard.
                     </p>
-                    <button>See More...</button>        
+                    <button className='cardButton'>See More...</button>        
                 </div>
-
+        </div>
                 <div className='bodyCard'>
-                    <img className="bodyImg" src={note} alt="Note"/>
-                    <h2>Notes</h2>
-                    <p>
+                    <div className='cardTitle'>
+                        <img className="bodyImg" src={note} alt="Note"/>
+                        <h2>Notes</h2>
+                    </div>
+                    <div className='cardContent'>
+                    <p className='cardInfo'>
                         Accent colors should be used sparingly to draw attention to 
                         important design elements. 
                         Overuse of accent colors can make your design look haphazard.
                     </p>
-                    <button>See More...</button>
+                    <button className='cardButton'>See More...</button>
                 </div>
-
-            </div>
-
+        </div>
+        </div>
         </div>
         </div>
     );
