@@ -85,6 +85,11 @@ const Landing = () => {
         </div>
         </div>
         </div>
+
+        <div className='featuresThing'>
+
+        </div>
+
         </div>
     );
 };
