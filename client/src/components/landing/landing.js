@@ -17,13 +17,11 @@ const Landing = () => {
 
                 <div className='IntroRight'>
                     <div className='rightContainer'>
-                    <div className='IntroCard'>
-                        <h2 className=''>Spell Binder</h2>
-                        <p>
+                    <div className='introCard'>
+                        <h2 className='introCardTitle'>Spell Binder</h2>
+                        <p className='introCardContent'>
                             Spell Binder is a set of worldbuilding tools that helps you create, 
                             organize and store your world setting.
-                        </p>
-                        <p>
                             With wiki-like articles, 
                             interactive maps, historical timelines, 
                             an RPG Campaign Manager and a full novel-writing software, 
