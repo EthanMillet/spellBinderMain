@@ -7,8 +7,13 @@
 
 .landing-header {
     width: 100%;
-    height: 36rem;
-    background-color: #223147;
+    height: 30rem;
+    background: rgba(0, 0, 0, .50) url("../../assets/splash.jpg");
+    background-blend-mode: darken;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
     
     display: flex;
     flex-direction: row;
@@ -27,11 +32,29 @@
 }
 
 .IntroText {
-    margin-left: 6rem;
+    margin-left: 7rem;
+    font-size: 58px;
+    color: white;
 }
 
 .IntroButton {
-    margin-left: 6rem;
+    margin-left: 7rem;
+    width: 50%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: white;
+    color: black;
+    border-radius: 15px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.IntroButton:hover {
+    color: white;
+    background-color: #AC4F49;
 }
 
 .IntroRight {
@@ -46,9 +69,9 @@
     width: 80%;
     height: 80%;
     border-radius: 15px;
-    background-image: url("../../assets/castle.jpg");
+    background: rgba(0, 0, 0, .50) url("../../assets/castle.jpg");
+    background-blend-mode: darken;
     background-repeat: no-repeat;
-    background-attachment: fixed;
     background-position: center;
     background-size: cover;
 
@@ -58,6 +81,7 @@
     align-items: center;
     align-content: center;
 }
+
 
 .introCard {
     width: 100%;

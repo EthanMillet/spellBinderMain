@@ -35,7 +35,7 @@
     cursor: pointer;
     transition: 0.3s;
     text-decoration: none;
-    color: blue;
+    color: #AC4F49;
   }
 
 .right-bar .button-right {
@@ -47,6 +47,12 @@
     text-decoration: none;
     color: #000;
   }
+
+  .right-bar button {
+    border: none;
+    background-color: white;
+  }
+
   .right-bar .button-right:hover {
     display: block;
     padding: 20px;
@@ -54,5 +60,5 @@
     border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     text-align: center;
     text-decoration: none;
-    color: blue;
+    color: #AC4F49;
   }

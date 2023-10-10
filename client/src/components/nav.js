@@ -11,7 +11,7 @@ import Auth from '../utils/auth';
           <div className='nav'>
         <div className='side-bar'>
           <Link className='button' to='/'>
-            <span>HOME</span>
+            <span>SPELLBINDER</span>
           </Link>
           <Link className='button' to='/features'>
             <span>FEATURES</span>
@@ -24,7 +24,7 @@ import Auth from '../utils/auth';
           <Link className='button-right' to='/profile'>
             <span>PROFILE</span>
           </Link>
-          <button className='login' onClick={() => Auth.logout()}>Logout</button>
+          <button className='button-right' onClick={() => Auth.logout()}>LOGOUT</button>
           </div>
 
         </div>
@@ -37,7 +37,7 @@ import Auth from '../utils/auth';
       <div className='nav'>
         <div className='side-bar'>
           <Link className='button' to='/'>
-            <span>HOME</span>
+            <span>SPELLBINDER</span>
           </Link>
           <Link className='button' to='/features'>
             <span>FEATURES</span>

@@ -80,13 +80,43 @@ const Landing = () => {
                     </p>
                     <button className='cardButton'>See More...</button>
                 </div>
-        </div>
-        </div>
-        </div>
+                </div>
+                </div>
+            </div>
 
         <div className='featuresThing'>
+            <div className='binderFeature'>
 
+            </div>
+
+            <div className='mapFeature'>
+
+            </div>
+
+            <div className='noteFeature'>
+
+            </div>
         </div>
+
+        <div className='showCaseThing'>
+            <div className='binderShowcase'></div>
+            <div className='mapShowcase'></div>
+            <div className='noteShowcase'></div>
+        </div>
+
+        <div className='learnMore'>
+            <div className='mobileApp'></div>
+            <div className='Pricing'></div>
+            <div className='About'></div>
+        </div>
+
+        <div className='footer'>
+            <h2>Write</h2>
+            <h2>Learn</h2>
+            <h2>Explore</h2>
+            <h2>Contact</h2>
+        </div>
+
 
         </div>
     );
