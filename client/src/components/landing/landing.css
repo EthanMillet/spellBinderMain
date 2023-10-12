@@ -3,11 +3,13 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .landing-header {
     width: 100%;
-    height: 30rem;
+    height: 26rem;
     background: rgba(0, 0, 0, .50) url("../../assets/splash.jpg");
     background-blend-mode: darken;
     background-repeat: no-repeat;
@@ -27,8 +29,8 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-
+    align-items: flex-end;
+    margin-right: 2rem;
 }
 
 .IntroText {
@@ -39,7 +41,7 @@
 
 .IntroButton {
     margin-left: 7rem;
-    width: 50%;
+    width: 45%;
     height: 3rem;
     display: flex;
     align-items: center;
@@ -61,12 +63,13 @@
     width: 50%;
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    margin-left: 2rem;
 }
 
 .rightContainer {
-    width: 80%;
+    width: 75%;
     height: 80%;
     border-radius: 15px;
     background: rgba(0, 0, 0, .50) url("../../assets/castle.jpg");
@@ -84,7 +87,7 @@
 
 
 .introCard {
-    width: 100%;
+    width: 90%;
     height: 100%;
     display: flex;
     flex-direction: column;    
@@ -105,7 +108,7 @@
 }
 
 .introCardContent {
-    font-size: 28px;
+    font-size: 24px;
     text-align: center;
 }
 
@@ -125,6 +128,7 @@
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
+    margin-bottom: 2rem;
 }
 
 .bodyCard {
@@ -186,4 +190,197 @@
 .cardButton:hover {
     background-color: #223147;
     color: white;
+}
+
+.featuresThing {
+    width: 80%;  
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.featureTitle {
+    font-size: 48px;
+}
+
+.binderFeature {
+    width: 100%;
+    height: 34rem;  
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.binderLeft {
+    height: 100%;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.binderLeftTitle {
+    margin: 0%;
+    font-size: 48px;
+}
+
+.binderLeftContent {
+    font-size: 20px;
+}
+
+.CircleContainer {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.contentCircle {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 100px;
+    background-color: #AC4F49;
+    width: 5rem;
+    height: 5rem;
+}
+
+.contentCircle:hover {
+    background-color: #223147;
+}
+
+.circleImg {
+    width: 75%;
+}
+
+.binderRight {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 2rem;
+}
+
+.binderRight img{
+    width: 750px;
+    height: 421px;
+    border-radius: 15px;
+}
+
+.showCaseThing {
+    background-color: #AC4F49;
+    width: 100%;
+    height: 40rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.ShowtitleContainer {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.showCaseTitle {
+    margin: 0;
+    font-size: 48px;
+    color: white;
+}
+
+.showCasesubTitle {
+    margin: 0;
+    font-size: 20px;
+    color: white;
+}
+
+.Showcase {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.showCaseCircle {
+    background-color: #223147;
+    border-radius: 200px;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.showCaseCircleImg {
+    width: 75%;
+}
+
+.showCaseHeader {
+    font-size: 20px;
+    color: white;
+}
+
+.showCaseButton {
+    width: 35%;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: #223147;
+    color: white;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.showCaseButton:hover {
+    background-color: white;
+    color: #223147;
+}
+
+.showCaseContent {
+    font-size: 18px;
+    color: white;
+    width: 70%;
+    text-align: center;
+}
+
+.showcaseDivider {
+    width: 1px;
+    height: 50%;
+    background-color: #223147;
+}
+
+.footer {
+    width: 100%;
+    height: 12rem;
+    background-color: #223147;
+    color: white;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
 }
