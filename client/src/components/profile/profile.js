@@ -36,9 +36,50 @@ function ProfileStation() {
     if (loading) return "Loading..."
     if (error) return `Error! ${error.message}`
 
+
+    const switchView = (event) => {
+        return
+    };
+
     return(
         <div>
-        <div>
+
+            <div className='leftNav'>
+                <button className='leftNavHomeButton'>Spell Binder</button>
+                <hr></hr>
+                <button className='leftNavButton'>Dashboard</button>
+                <button className='leftNavButton'>Players</button>
+                <button className='leftNavButton'>Campaigns</button>
+                <button className='leftNavButton'>Create</button>
+                <button className='leftNavButton'>Advanced Tools</button>
+                <button className='leftNavButton'>Help</button>
+
+                <hr></hr>
+                <button className='leftNavBottomButton'></button>
+                <button className='leftNavBottomButton'></button>
+                <button className='leftNavBottomButton'></button>
+            </div>
+
+            <div className='subNav'>
+                <button className='subNavButton'>Your Binders</button>
+                <button className='subNavButton'>News</button>
+                <button className='subNavButton'>Community</button>
+                <button className='subNavButton'>Account</button>
+            </div>
+
+            <div className='welcomeBanner'>
+                <h2 className='welcomeName'>Welcome {data.user.username}</h2>
+            </div>
+
+        <div className='binderDisplay'>
+            {data.user.binders.map((binders) => (
+                <div key={binders._id}>
+                    <Link to="/binder" state={{from: binders._id}}><span>{binders.name}</span></Link>
+                </div>
+            ))}
+        </div>
+
+        <div className='createBinder'>
             <form onSubmit={handleFormSubmit}>
                 <label htmlFor="name">Name</label>
                     <input
@@ -49,13 +90,6 @@ function ProfileStation() {
                         onChange={handleChange}/>
                 <button type="submit">Submit</button>
             </form>
-        </div>
-        <div>
-            {data.user.binders.map((binders) => (
-                <div key={binders._id}>
-                    <Link to="/binder" state={{from: binders._id}}><span>{binders.name}</span></Link>
-                </div>
-            ))}
         </div>
 
         </div>

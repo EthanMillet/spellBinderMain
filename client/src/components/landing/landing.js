@@ -225,16 +225,6 @@ const Landing = () => {
             </div>
         </div>
 
-        <div className='learnMore'>
-            <div className='mobileApp'>
-                <h2>Mobile App</h2>
-            </div>
-
-            <div className='About'>
-                <h2>About</h2>
-            </div>
-        </div>
-
         <div className='footer'>
             <div className='footerContainer'>
                 <h2>World Build</h2>
