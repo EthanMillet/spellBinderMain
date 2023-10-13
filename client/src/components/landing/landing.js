@@ -226,16 +226,35 @@ const Landing = () => {
         </div>
 
         <div className='learnMore'>
-            <div className='mobileApp'></div>
-            <div className='Pricing'></div>
-            <div className='About'></div>
+            <div className='mobileApp'>
+                <h2>Mobile App</h2>
+            </div>
+
+            <div className='About'>
+                <h2>About</h2>
+            </div>
         </div>
 
         <div className='footer'>
-            <h2>Write</h2>
-            <h2>Learn</h2>
-            <h2>Explore</h2>
-            <h2>Contact</h2>
+            <div className='footerContainer'>
+                <h2>World Build</h2>
+                <h3>For Novelist</h3>
+                <h3>For Game Masters</h3>
+                <h3>For Worldbuilders</h3>
+            </div>
+
+            <div className='footerContainer'>
+                <h2>Contact</h2>
+                <h3>About Us</h3>
+                <h3>FAQ</h3>
+            </div>
+
+            <div className='footerContainer'>
+                <h2>Learn</h2>
+                <h3>News</h3>
+                <h3>Videos</h3>
+                <h3>Tutorials</h3>
+            </div>
         </div>
 
 
