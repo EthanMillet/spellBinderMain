@@ -7,7 +7,7 @@ import { GET_USER } from '../../utils/queries';
 
 import { Link } from 'react-router-dom';
 
-import './map.css'
+import './styling/profile.css'
 
 function ProfileStation() {
     const [formState, setFormState] = useState({name: ''});
@@ -42,11 +42,11 @@ function ProfileStation() {
     };
 
     return(
-        <div>
+        <div className='mainContainer'>
 
             <div className='leftNav'>
                 <button className='leftNavHomeButton'>Spell Binder</button>
-                <hr></hr>
+                <hr className='divider'></hr>
                 <button className='leftNavButton'>Dashboard</button>
                 <button className='leftNavButton'>Players</button>
                 <button className='leftNavButton'>Campaigns</button>
@@ -54,11 +54,13 @@ function ProfileStation() {
                 <button className='leftNavButton'>Advanced Tools</button>
                 <button className='leftNavButton'>Help</button>
 
-                <hr></hr>
+                <hr className='divider'></hr>
                 <button className='leftNavBottomButton'></button>
                 <button className='leftNavBottomButton'></button>
                 <button className='leftNavBottomButton'></button>
             </div>
+
+            <div className='midContainer'>
 
             <div className='subNav'>
                 <button className='subNavButton'>Your Binders</button>
@@ -68,18 +70,22 @@ function ProfileStation() {
             </div>
 
             <div className='welcomeBanner'>
-                <h2 className='welcomeName'>Welcome {data.user.username}</h2>
+                <div className='banner'>
+                    <h2 className='welcomeName'>Welcome {data.user.username}</h2>
+                </div>
             </div>
+        
+        <div className='binders'>
 
-        <div className='binderDisplay'>
+    
             {data.user.binders.map((binders) => (
-                <div key={binders._id}>
+                <div key={binders._id} className='binderBlock'>
                     <Link to="/binder" state={{from: binders._id}}><span>{binders.name}</span></Link>
                 </div>
             ))}
-        </div>
 
-        <div className='createBinder'>
+
+        <div className='binderBlock'>
             <form onSubmit={handleFormSubmit}>
                 <label htmlFor="name">Name</label>
                     <input
@@ -91,7 +97,8 @@ function ProfileStation() {
                 <button type="submit">Submit</button>
             </form>
         </div>
-
+        </div>
+</div>
         </div>
     );
 };

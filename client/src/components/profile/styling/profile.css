@@ -1,0 +1,87 @@
+.mainContainer {
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+
+.leftNav {
+    background-color: #223147;
+    height: 100%;
+    width: 10%;
+    flex-shrink: 1;
+    flex-basis: auto;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.divider {
+    width: 80%;
+    height: 1px;
+    background-color: white;
+}
+
+.midContainer{
+    width: 90%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.subNav {
+    width: 100%;
+    height: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.welcomeBanner {
+    width: 100%;
+    height: 8rem;
+    color: white;
+
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner {
+    background-color: black;
+    width: 80%;
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.binders {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.binderBlock {
+    height: 12rem;
+    width: 12rem;
+}
