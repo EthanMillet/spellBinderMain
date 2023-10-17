@@ -9,7 +9,6 @@
     align-items: flex-start;
 }
 
-
 .leftNav {
     background-color: #223147;
     height: 100%;
@@ -32,10 +31,13 @@
 
 .midContainer{
     width: 90%;
-    height: 100%;
+    height: auto;
+
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .subNav {
@@ -77,11 +79,33 @@
 .binders {
     width: 100%;
     display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.bindercontainer {
+    width: 95%;
+
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: flex-start;
+
+    gap: 4rem;
 }
 
 .binderBlock {
-    height: 12rem;
-    width: 12rem;
+    height: 16rem;
+    width: 16rem;
+
+    background-color: brown;
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }

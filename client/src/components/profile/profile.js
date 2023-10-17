@@ -77,7 +77,7 @@ function ProfileStation() {
         
         <div className='binders'>
 
-    
+            <div className='bindercontainer'>
             {data.user.binders.map((binders) => (
                 <div key={binders._id} className='binderBlock'>
                     <Link to="/binder" state={{from: binders._id}}><span>{binders.name}</span></Link>
@@ -96,6 +96,7 @@ function ProfileStation() {
                         onChange={handleChange}/>
                 <button type="submit">Submit</button>
             </form>
+        </div>
         </div>
         </div>
 </div>
