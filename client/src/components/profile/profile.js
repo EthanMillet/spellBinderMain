@@ -44,29 +44,45 @@ function ProfileStation() {
     return(
         <div className='mainContainer'>
 
-            <div className='leftNav'>
-                <button className='leftNavHomeButton'>Spell Binder</button>
-                <hr className='divider'></hr>
-                <button className='leftNavButton'>Dashboard</button>
-                <button className='leftNavButton'>Players</button>
-                <button className='leftNavButton'>Campaigns</button>
-                <button className='leftNavButton'>Create</button>
-                <button className='leftNavButton'>Advanced Tools</button>
-                <button className='leftNavButton'>Help</button>
+            {//<div className='leftNav'>
+                //<button className='leftNavHomeButton'>Spell Binder</button>
+                //<hr className='divider'></hr>
+                //<button className='leftNavButton'>Dashboard</button>
+                //<button className='leftNavButton'>Players</button>
+                //<button className='leftNavButton'>Campaigns</button>
+                //<button className='leftNavButton'>Create</button>
+                //<button className='leftNavButton'>Advanced Tools</button>
+                //<button className='leftNavButton'>Help</button>
 
-                <hr className='divider'></hr>
-                <button className='leftNavBottomButton'></button>
-                <button className='leftNavBottomButton'></button>
-                <button className='leftNavBottomButton'></button>
-            </div>
+                //<hr className='divider'></hr>
 
+                //<div className='leftNavBottom'>
+                    //<button className='leftNavBottomButton'></button>
+                    //<button className='leftNavBottomButton'></button>
+                    //<button className='leftNavBottomButton'></button>
+               //</div>
+
+            //</div>
+            }
+            
             <div className='midContainer'>
 
             <div className='subNav'>
-                <button className='subNavButton'>Your Binders</button>
+                <div className='subNavLeft'>
+                    <button className='subNavButton'>Dashboard</button>
+                    <button className='subNavButton'>Players</button>
+                    <button className='subNavButton'>Campaigns</button>
+                    <button className='subNavButton'>Create</button>
+                    <button className='subNavButton'>Advanced Tools</button>
+                </div>
+
+                <div className='subNavRight'>
                 <button className='subNavButton'>News</button>
-                <button className='subNavButton'>Community</button>
+                <button className='subNavButton'>Community</button>              
                 <button className='subNavButton'>Account</button>
+                <button className='subNavButton'>Help</button>
+                </div>
+                
             </div>
 
             <div className='welcomeBanner'>
@@ -86,6 +102,7 @@ function ProfileStation() {
 
 
         <div className='binderBlock'>
+            <h2>Create Binder</h2>
             <form onSubmit={handleFormSubmit}>
                 <label htmlFor="name">Name</label>
                     <input
