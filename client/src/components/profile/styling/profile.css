@@ -66,16 +66,47 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
+    background-color: #223147;
 }
 
 .subNavLeft {
     align-items: flex-end;
+    background-color: #223147;
 }
 
 .subNavRight {
     align-self: flex-start;
+    background-color: #223147;
 }
 
+.subNavButton {
+    width: auto;
+    height: 2rem;
+    background-color: #223147;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.subNavActive {
+    width: auto;
+    height: 2rem;
+    background-color: white;
+    color: #223147;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.subNavButton:hover {
+    background-color: white;
+    color: #223147;
+}
 
 .welcomeBanner {
     width: 100%;

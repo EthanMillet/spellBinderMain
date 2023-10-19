@@ -11,6 +11,9 @@ import './styling/profile.css'
 
 function ProfileStation() {
     const [formState, setFormState] = useState({name: ''});
+
+    const [viewState, setViewState] = useState({name: ''});
+
     const [addBinder] = useMutation(ADD_BINDER);
 
     const handleFormSubmit = async (event) => {
@@ -30,6 +33,10 @@ function ProfileStation() {
         ...formState,
         [name]: value,
     });
+    };
+
+     handleViewChange() {
+        this.setViewState({name: e})
     };
         
     const { loading, error, data } = useQuery(GET_USER);
@@ -69,18 +76,18 @@ function ProfileStation() {
 
             <div className='subNav'>
                 <div className='subNavLeft'>
-                    <button className='subNavButton'>Dashboard</button>
-                    <button className='subNavButton'>Players</button>
-                    <button className='subNavButton'>Campaigns</button>
-                    <button className='subNavButton'>Create</button>
-                    <button className='subNavButton'>Advanced Tools</button>
+                    <button onClick={handleViewChange(this.name)} className='subNavButton' name='Dashboard'>Dashboard</button>
+                    <button onClick={handleViewChange} className='subNavButton' name='Players'>Players</button>
+                    <button onClick={handleViewChange} className='subNavButton' name='Campaigns'>Campaigns</button>
+                    <button onClick={handleViewChange} className='subNavButton' name='Create'>Create</button>
+                    <button onClick={handleViewChange} className='subNavButton' name='Advanced Tools'>Advanced Tools</button>
                 </div>
 
                 <div className='subNavRight'>
-                <button className='subNavButton'>News</button>
-                <button className='subNavButton'>Community</button>              
-                <button className='subNavButton'>Account</button>
-                <button className='subNavButton'>Help</button>
+                <button onClick={handleViewChange}className='subNavButton' name='News'>News</button>
+                <button onClick={handleViewChange} className='subNavButton' name='Community'>Community</button>              
+                <button onClick={handleViewChange} className='subNavButton' name='Account'>Account</button>
+                <button onClick={handleViewChange} className='subNavButton' name='Help'>Help</button>
                 </div>
                 
             </div>
