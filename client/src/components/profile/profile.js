@@ -34,10 +34,6 @@ function ProfileStation() {
         [name]: value,
     });
     };
-
-     handleViewChange() {
-        this.setViewState({name: e})
-    };
         
     const { loading, error, data } = useQuery(GET_USER);
     if (loading) return "Loading..."
@@ -45,7 +41,10 @@ function ProfileStation() {
 
 
     const switchView = (event) => {
-        return
+        if (viewState === "Dashboard") {
+            main = 
+            
+        }
     };
 
     return(
@@ -76,18 +75,18 @@ function ProfileStation() {
 
             <div className='subNav'>
                 <div className='subNavLeft'>
-                    <button onClick={handleViewChange(this.name)} className='subNavButton' name='Dashboard'>Dashboard</button>
-                    <button onClick={handleViewChange} className='subNavButton' name='Players'>Players</button>
-                    <button onClick={handleViewChange} className='subNavButton' name='Campaigns'>Campaigns</button>
-                    <button onClick={handleViewChange} className='subNavButton' name='Create'>Create</button>
-                    <button onClick={handleViewChange} className='subNavButton' name='Advanced Tools'>Advanced Tools</button>
+                    <button onClick={() => setViewState("Dashboard") + console.log(viewState)} className='subNavButton' data='Dashboard'>Dashboard</button>
+                    <button onClick={() => setViewState("Players") + console.log(viewState)} className='subNavButton' name='Players'>Players</button>
+                    <button onClick={() => setViewState("Campaigns") + console.log(viewState)} className='subNavButton' name='Campaigns'>Campaigns</button>
+                    <button onClick={() => setViewState("Create") + console.log(viewState)} className='subNavButton' name='Create'>Create</button>
+                    <button onClick={() => setViewState("Advanced Tools") + console.log(viewState)} className='subNavButton' name='Advanced Tools'>Advanced Tools</button>
                 </div>
 
                 <div className='subNavRight'>
-                <button onClick={handleViewChange}className='subNavButton' name='News'>News</button>
-                <button onClick={handleViewChange} className='subNavButton' name='Community'>Community</button>              
-                <button onClick={handleViewChange} className='subNavButton' name='Account'>Account</button>
-                <button onClick={handleViewChange} className='subNavButton' name='Help'>Help</button>
+                <button onClick={() => setViewState("News") + console.log(viewState)} className='subNavButton' name='News'>News</button>
+                <button onClick={() => setViewState("Community") + console.log(viewState)} className='subNavButton' name='Community'>Community</button>              
+                <button onClick={() => setViewState("Account") + console.log(viewState)} className='subNavButton' name='Account'>Account</button>
+                <button onClick={() => setViewState("Help") + console.log(viewState)} className='subNavButton' name='Help'>Help</button>
                 </div>
                 
             </div>
