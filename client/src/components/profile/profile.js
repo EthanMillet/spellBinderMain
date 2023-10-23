@@ -1,92 +1,54 @@
 import React from 'react';
 import { useState } from 'react';
-import { useMutation } from '@apollo/client';
 import { useQuery } from '@apollo/client';
-import { ADD_BINDER } from '../../utils/mutations';
 import { GET_USER } from '../../utils/queries';
+import { useEffect } from 'react';
 
 import { Link } from 'react-router-dom';
 
 import './styling/profile.css'
 
+import Dashboard from './profileComponents/Dashboard';
+import Players from './profileComponents/Players';
+import Create from './profileComponents/Create';
+import AdvancedTools from './profileComponents/AdvancedTools';
+
 function ProfileStation() {
-    const [formState, setFormState] = useState({name: ''});
-
     const [viewState, setViewState] = useState({name: ''});
+    var conditionalRender = <Dashboard/>;
 
-    const [addBinder] = useMutation(ADD_BINDER);
-
-    const handleFormSubmit = async (event) => {
-        event.preventDefault();
-        try {
-        await addBinder({
-            variables: { name: formState.name },
-            });
-            console.log('Added Outfit')
-        } catch (e) {
-            console.log(e);
-        }};
-
-    const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormState({
-        ...formState,
-        [name]: value,
-    });
-    };
-        
     const { loading, error, data } = useQuery(GET_USER);
     if (loading) return "Loading..."
     if (error) return `Error! ${error.message}`
 
-
-    const switchView = (event) => {
         if (viewState === "Dashboard") {
-            main = 
-            
+            conditionalRender = <Dashboard/>;
+        } else if (viewState === "Players") {
+            conditionalRender = <Players/>;
+        } else if (viewState === "Create") {
+            conditionalRender = <Create/>;
+        } else if (viewState === "Advanced Tools") {
+            conditionalRender = <AdvancedTools/>;
         }
-    };
+
 
     return(
-        <div className='mainContainer'>
-
-            {//<div className='leftNav'>
-                //<button className='leftNavHomeButton'>Spell Binder</button>
-                //<hr className='divider'></hr>
-                //<button className='leftNavButton'>Dashboard</button>
-                //<button className='leftNavButton'>Players</button>
-                //<button className='leftNavButton'>Campaigns</button>
-                //<button className='leftNavButton'>Create</button>
-                //<button className='leftNavButton'>Advanced Tools</button>
-                //<button className='leftNavButton'>Help</button>
-
-                //<hr className='divider'></hr>
-
-                //<div className='leftNavBottom'>
-                    //<button className='leftNavBottomButton'></button>
-                    //<button className='leftNavBottomButton'></button>
-                    //<button className='leftNavBottomButton'></button>
-               //</div>
-
-            //</div>
-            }
-            
+        <div className='mainContainer'>            
             <div className='midContainer'>
 
             <div className='subNav'>
                 <div className='subNavLeft'>
-                    <button onClick={() => setViewState("Dashboard") + console.log(viewState)} className='subNavButton' data='Dashboard'>Dashboard</button>
-                    <button onClick={() => setViewState("Players") + console.log(viewState)} className='subNavButton' name='Players'>Players</button>
-                    <button onClick={() => setViewState("Campaigns") + console.log(viewState)} className='subNavButton' name='Campaigns'>Campaigns</button>
-                    <button onClick={() => setViewState("Create") + console.log(viewState)} className='subNavButton' name='Create'>Create</button>
-                    <button onClick={() => setViewState("Advanced Tools") + console.log(viewState)} className='subNavButton' name='Advanced Tools'>Advanced Tools</button>
+                    <button onClick={() => setViewState("Dashboard")} className='subNavButton' data='Dashboard'>Dashboard</button>
+                    <button onClick={() => setViewState("Players")} className='subNavButton' name='Players'>Players</button>
+                    <button onClick={() => setViewState("Create")} className='subNavButton' name='Create'>Create</button>
+                    <button onClick={() => setViewState("Advanced Tools")} className='subNavButton' name='Advanced Tools'>Advanced Tools</button>
                 </div>
 
                 <div className='subNavRight'>
-                <button onClick={() => setViewState("News") + console.log(viewState)} className='subNavButton' name='News'>News</button>
-                <button onClick={() => setViewState("Community") + console.log(viewState)} className='subNavButton' name='Community'>Community</button>              
-                <button onClick={() => setViewState("Account") + console.log(viewState)} className='subNavButton' name='Account'>Account</button>
-                <button onClick={() => setViewState("Help") + console.log(viewState)} className='subNavButton' name='Help'>Help</button>
+                <button onClick={() => setViewState("News")} className='subNavButton' name='News'>News</button>
+                <button onClick={() => setViewState("Community")} className='subNavButton' name='Community'>Community</button>              
+                <button onClick={() => setViewState("Account")} className='subNavButton' name='Account'>Account</button>
+                <button onClick={() => setViewState("Help")} className='subNavButton' name='Help'>Help</button>
                 </div>
                 
             </div>
@@ -97,30 +59,8 @@ function ProfileStation() {
                 </div>
             </div>
         
-        <div className='binders'>
-
-            <div className='bindercontainer'>
-            {data.user.binders.map((binders) => (
-                <div key={binders._id} className='binderBlock'>
-                    <Link to="/binder" state={{from: binders._id}}><span>{binders.name}</span></Link>
-                </div>
-            ))}
-
-
-        <div className='binderBlock'>
-            <h2>Create Binder</h2>
-            <form onSubmit={handleFormSubmit}>
-                <label htmlFor="name">Name</label>
-                    <input
-                        placeholder="Binder Name"
-                        name="name"
-                        type="name"
-                        id="name"
-                        onChange={handleChange}/>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-        </div>
+        <div className='conditionalRender'>
+            {conditionalRender}
         </div>
 </div>
         </div>
