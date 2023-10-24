@@ -30,6 +30,11 @@ return (
     <Link to="/createMap" state={{from: data.binder._id}}><span>Create Map</span></Link>
     <Link to="/createNote" state={{from: data.binder._id}}><span>Create Note</span></Link>
 
+    <div className='subNav'>
+        <button>Maps</button>
+        <button>Notes</button>
+    </div>
+
 
 {/* access map */}
     <div>
