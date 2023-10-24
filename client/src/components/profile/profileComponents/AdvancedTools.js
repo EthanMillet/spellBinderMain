@@ -11,7 +11,7 @@ import '../styling/profile.css'
 
 function AdvancedTools() {
 return (
-    <h2>Advanced Tools</h2>
+    <h2>Coming Soon</h2>
 )
 }
 

@@ -11,7 +11,7 @@ import '../styling/profile.css'
 
 function Players() {
     return(
-        <h2>Players</h2>
+        <h2>Coming Soon!</h2>
     )
 }   
 

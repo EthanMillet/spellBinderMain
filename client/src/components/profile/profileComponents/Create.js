@@ -11,7 +11,7 @@ import '../styling/profile.css'
 
 function Create() {
     return(
-        <h2>Create</h2>
+        <h2>Coming Soon!</h2>
     )
 }
 
