@@ -21,20 +21,19 @@ const {loading, error, data } = useQuery(GET_BINDER, {
 
     
 return (    
-    <div>
+    <div>    
+        
+        <div className='subNav'>
+        <div className='subNavLeft'>
+            <Link className='subNavLink' to="/createMap" state={{from: data.binder._id}}><span>Create Map</span></Link>
+            <Link className='subNavLink' to="/createNote" state={{from: data.binder._id}}><span>Create Note</span></Link>
+        </div>
+        </div>
+
     <div>
         <h1>{ data.binder.name }</h1>
         <h2>{from}</h2>
     </div>
-
-    <Link to="/createMap" state={{from: data.binder._id}}><span>Create Map</span></Link>
-    <Link to="/createNote" state={{from: data.binder._id}}><span>Create Note</span></Link>
-
-    <div className='subNav'>
-        <button>Maps</button>
-        <button>Notes</button>
-    </div>
-
 
 {/* access map */}
     <div>
