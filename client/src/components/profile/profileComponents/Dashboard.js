@@ -13,8 +13,6 @@ function Dashboard() {
 
     const [formState, setFormState] = useState({name: ''});
 
-    const [viewState, setViewState] = useState({name: ''});
-
     const [addBinder] = useMutation(ADD_BINDER);
 
     const handleFormSubmit = async (event) => {
@@ -41,12 +39,6 @@ function Dashboard() {
     if (error) return `Error! ${error.message}`
 
 
-    const switchView = (event) => {
-        if (viewState === "Dashboard") {
-         
-            
-        }
-    };
     return (
         <div className='binders'>
 

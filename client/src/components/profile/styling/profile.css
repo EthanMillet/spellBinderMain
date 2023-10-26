@@ -1,3 +1,7 @@
+a {
+    text-decoration: none;
+}
+
 .mainContainer {
     height: auto;
     width: 100%;
@@ -93,11 +97,15 @@
     font-size: 18px;
 }
 
+.subNavButton:hover {
+    background-color: white;
+    color: #223147;
+}
+
 .subNavLink {
     width: auto;
-    height: 100%;
+    height: 2rem;
 
-    background-color: #223147;
     color: white;
     align-items: center;
     justify-content: center;
@@ -107,7 +115,6 @@
 }
 
 .subNavLink:hover {
-    background-color: white;
     color: #223147;
 }
 
@@ -135,10 +142,7 @@
     font-size: 18px;
 }
 
-.subNavButton:hover {
-    background-color: white;
-    color: #223147;
-}
+
 
 .welcomeBanner {
     width: 100%;
@@ -189,6 +193,42 @@
 .binderBlock {
     height: 16rem;
     width: 16rem;
+
+    background-color: brown;
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.mapNotes {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.mapNotesContainer {
+    width: 95%;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    gap: 4rem;
+}
+
+.mapNoteBlock {
+    height: 16rem;
+    width: 19rem;
+
 
     background-color: brown;
     border-radius: 15px;
