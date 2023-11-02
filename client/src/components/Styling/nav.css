@@ -1,4 +1,13 @@
+:root {
+  --black: #111;
+  --dark: #141414;
+  --white: #DAD9D3;
+  --light: #5DA3B3;
+  --mainBrand: #588FBF;
+}
+
 .side-bar{
+  background-color: var(--black);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05); 
   display: flex;
   flex-direction: row;
@@ -6,6 +15,7 @@
 }
 
 .right-bar{
+    background-color: var(--black);
     flex-grow: 4;
     border-bottom: 1px solid rgba(0, 0, 0, 0.05); 
     display: flex;
@@ -21,31 +31,26 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   text-align: center;
   cursor: pointer;
-  transition: 0.3s;
   text-decoration: none;
-  color: #000;
+  color: white;
 }
 
 .side-bar .button:hover {
     display: block;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.05);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    color: var(--mainBrand);
     text-align: center;
     cursor: pointer;
-    transition: 0.3s;
     text-decoration: none;
-    color: #AC4F49;
   }
 
 .right-bar .button-right {
+    background-color: var(--black);
     display: block;
     padding: 20px;
-
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     text-align: center;
     text-decoration: none;
-    color: #000;
+    color: white;
   }
 
   .right-bar button {
@@ -56,9 +61,7 @@
   .right-bar .button-right:hover {
     display: block;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.05);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    color: var(--mainBrand);
     text-align: center;
     text-decoration: none;
-    color: #AC4F49;
   }

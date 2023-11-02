@@ -8,6 +8,7 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import Nav from './components/nav.js';
+import Footer from './components/footer.js'
 import Landing from './components/landing/landing';
 import Profile from './components/profile/profile';
 import Binder from './components/profile/binder';
@@ -57,6 +58,7 @@ function App() {
 
 
       </Routes>
+      <Footer/>
 
       </ApolloProvider>
   );

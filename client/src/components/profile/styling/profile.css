@@ -1,3 +1,12 @@
+:root {
+    --black: #111;
+    --dark: #141414;
+    --white: #DAD9D3;
+    --light: #5DA3B3;
+    --mainBrand: #588FBF;
+  }
+
+
 a {
     text-decoration: none;
 }
@@ -11,10 +20,12 @@ a {
     flex-wrap: wrap;
     justify-content: flex-start;
     align-items: flex-start;
+
+    background-color: var(--dark);
 }
 
 .leftNav {
-    background-color: #223147;
+    background-color: var(--dark);
     height: 100%;
     width: 10%;
     flex-shrink: 1;
@@ -72,23 +83,23 @@ a {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
-    background-color: #223147;
+    background-color: var(--dark);
 }
 
 .subNavLeft {
     align-items: flex-end;
-    background-color: #223147;
+    background-color: var(--dark);
 }
 
 .subNavRight {
     align-self: flex-start;
-    background-color: #223147;
+    background-color: var(--dark);
 }
 
 .subNavButton {
     width: auto;
     height: 2rem;
-    background-color: #223147;
+    background-color: var(--dark);
     color: white;
     align-items: center;
     justify-content: center;
@@ -98,8 +109,8 @@ a {
 }
 
 .subNavButton:hover {
-    background-color: white;
-    color: #223147;
+    background-color: var(--mainBrand);
+    color: white;
 }
 
 .subNavLink {
@@ -115,14 +126,14 @@ a {
 }
 
 .subNavLink:hover {
-    color: #223147;
+    color: var(--dark);
 }
 
 .active {
     width: auto;
     height: 2rem;
     background-color: white;
-    color: #223147;
+    color: var(--dark);
     align-items: center;
     justify-content: center;
     border: none;
@@ -134,7 +145,7 @@ a {
     width: auto;
     height: 2rem;
     background-color: white;
-    color: #223147;
+    color: var(--dark);
     align-items: center;
     justify-content: center;
     border: none;
@@ -142,11 +153,10 @@ a {
     font-size: 18px;
 }
 
-
-
 .welcomeBanner {
     width: 100%;
     height: 8rem;
+    
     color: white;
 
     margin-top: 2rem;
@@ -159,7 +169,7 @@ a {
 }
 
 .banner {
-    background-color: black;
+    background-color: var(--mainBrand);
     width: 80%;
     height: 100%;
 
@@ -177,6 +187,7 @@ a {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    margin-bottom: 2rem;
 }
 
 .bindercontainer {
@@ -194,7 +205,8 @@ a {
     height: 16rem;
     width: 16rem;
 
-    background-color: brown;
+    background-color: var(--mainBrand);
+    color: white;
     border-radius: 15px;
 
     display: flex;
@@ -204,7 +216,27 @@ a {
     align-items: center;
 }
 
+.binderBlock a {
+    color: white;
+    text-decoration: none;
+}
 
+.createBinder{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.createNote:hover {
+    background-color: white;
+    color: black;
+}
+
+.createNote a {
+    color: black;
+}
 
 .mapNotes {
     width: 100%;
@@ -230,7 +262,7 @@ a {
     width: 19rem;
 
 
-    background-color: brown;
+    background-color: var(--darkPurple);
     border-radius: 15px;
 
     display: flex;

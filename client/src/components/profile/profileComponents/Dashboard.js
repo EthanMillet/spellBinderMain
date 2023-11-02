@@ -24,7 +24,7 @@ function Dashboard() {
             console.log('Added Outfit')
         } catch (e) {
             console.log(e);
-        }};
+        } window.location.reload();};
 
     const handleChange = (event) => {
     const { name, value } = event.target;
@@ -50,20 +50,32 @@ function Dashboard() {
         ))}
 
 
-    <div className='binderBlock'>
+
+        <div className='login-modal'>
+
+        <div className='modal-header'>
         <h2>Create Binder</h2>
-        <form onSubmit={handleFormSubmit}>
-            <label htmlFor="name">Name</label>
+        </div>
+
+        <div className='modal-body'>
+            
+        <form className='form-body' onSubmit={handleFormSubmit}>
+            <label className='label' htmlFor="name">Name</label>
                 <input
+                    className='input'
                     placeholder="Binder Name"
                     name="name"
                     type="name"
                     id="name"
                     onChange={handleChange}/>
-            <button type="submit">Submit</button>
+                    <hr className='form-break'></hr>
+            <button className="sumbit-button" type="submit">Submit</button>
         </form>
+        </div>
+
     </div>
     </div>
+    
     </div>
     )
 }

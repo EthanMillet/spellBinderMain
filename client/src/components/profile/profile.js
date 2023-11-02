@@ -44,13 +44,15 @@ function ProfileStation() {
                     <button onClick={() => setViewState("Advanced Tools")} className='subNavButton' name='Advanced Tools'>Advanced Tools</button>
                 </div>
 
-                <div className='subNavRight'>
-                <button onClick={() => setViewState("News")} className='subNavButton' name='News'>News</button>
-                <button onClick={() => setViewState("Community")} className='subNavButton' name='Community'>Community</button>              
-                <button onClick={() => setViewState("Account")} className='subNavButton' name='Account'>Account</button>
-                <button onClick={() => setViewState("Help")} className='subNavButton' name='Help'>Help</button>
-                </div>
-                
+
+                {
+                //<div className='subNavRight'>
+                //<button onClick={() => setViewState("News")} className='subNavButton' name='News'>News</button>
+                //<button onClick={() => setViewState("Community")} className='subNavButton' name='Community'>Community</button>              
+                //<button onClick={() => setViewState("Account")} className='subNavButton' name='Account'>Account</button>
+                //<button onClick={() => setViewState("Help")} className='subNavButton' name='Help'>Help</button>
+                //</div>
+                }
             </div>
 
             <div className='welcomeBanner'>
@@ -63,7 +65,7 @@ function ProfileStation() {
             {conditionalRender}
         </div>
 </div>
-        </div>
+</div>
     );
 };
 

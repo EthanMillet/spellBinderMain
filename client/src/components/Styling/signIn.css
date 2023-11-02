@@ -1,3 +1,11 @@
+:root {
+    --black: #111;
+    --dark: #141414;
+    --white: #DAD9D3;
+    --light: #5DA3B3;
+    --mainBrand: #588FBF;
+  }
+
 .container{
     background: rgba(0, 0, 0, .30) url("../../assets/splash.jpg");
     background-blend-mode: darken;
@@ -66,16 +74,11 @@
 }
 
 .signUp:hover {
-    color: orange;
+    color: var(--mainBrand);
 }
 
 .logIn:hover {
-    color: orange;
-}
-
-
-.modal-header {
-
+    color: var(--mainBrand);
 }
 
 .label {
@@ -101,7 +104,7 @@
 }
 
 .form-break {
-    border: 1px solid rgba(0, 0, 0, 0.05); 
+    border: 1px solid var(--dark); 
     height: 2px;
     width: 100%;
 }
@@ -121,4 +124,12 @@
     height: 2rem;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    background-color: var(--mainBrand);
+    border: 1px solid var(--dark);
+    border-radius: 15px;
+}
+
+.sumbit-button:hover {
+    background-color: var(--dark);
+    color: white;
 }

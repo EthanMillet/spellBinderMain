@@ -1,4 +1,13 @@
+:root {
+  --black: #111;
+  --dark: #141414;
+  --white: #DAD9D3;
+  --light: #5DA3B3;
+  --mainBrand: #588FBF;
+}
+
 body {
+  background-color: var(--dark);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -10,4 +19,8 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.binderMainBody {
+  min-height: 90vh;
 }

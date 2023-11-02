@@ -224,30 +224,6 @@ const Landing = () => {
                     Overuse of accent colors can make your design look haphazard.</p>
             </div>
         </div>
-
-        <div className='footer'>
-            <div className='footerContainer'>
-                <h2>World Build</h2>
-                <h3>For Novelist</h3>
-                <h3>For Game Masters</h3>
-                <h3>For Worldbuilders</h3>
-            </div>
-
-            <div className='footerContainer'>
-                <h2>Contact</h2>
-                <h3>About Us</h3>
-                <h3>FAQ</h3>
-            </div>
-
-            <div className='footerContainer'>
-                <h2>Learn</h2>
-                <h3>News</h3>
-                <h3>Videos</h3>
-                <h3>Tutorials</h3>
-            </div>
-        </div>
-
-
         </div>
     );
 };
