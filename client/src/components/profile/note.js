@@ -4,7 +4,7 @@ import { useMutation } from '@apollo/client';
 import { useQuery } from '@apollo/client';
 import { Link, useLocation } from 'react-router-dom';
 
-import { GET_BINDER, GET_USER, GET_MAP, GET_NOTE } from '../../utils/queries';
+import { GET_NOTE } from '../../utils/queries';
 import { ADD_NOTE, ADD_MAP } from '../../utils/mutations';
 
 import { CKEditor } from '@ckeditor/ckeditor5-react';
@@ -68,6 +68,7 @@ function CreateNoteStation() {
 
 <div>
         <h1>{ data.note._id}</h1>
+        <h2>{ data.note.content }</h2>
         <h2>{from}</h2>
     </div>
     
@@ -99,7 +100,7 @@ function CreateNoteStation() {
                 <CKEditor
                     editor={ Editor }
                     config={ editorConfiguration }
-                    data="<p></p>"
+                    data={`<p> ${data.note.content} </p>`}
 
                     onChange={ ( event, editor ) => {
                         const data = editor.getData();

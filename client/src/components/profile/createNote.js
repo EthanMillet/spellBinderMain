@@ -14,8 +14,11 @@ function CreateNoteStation() {
     const location = useLocation()
     const { from } = location.state
 
+
     const [addNote] = useMutation(ADD_NOTE);
-    const [noteFormState, setNoteFormState] = useState({title: '', content: ''});
+    const [noteTitleFormState, setNoteTitleFormState] = useState({title: ''})
+    const [noteFormState, setNoteFormState] = useState({content: ''});
+
 
     const {loading, error, data } = useQuery(GET_BINDER, {
         variables: { _id: from },
@@ -47,7 +50,7 @@ function CreateNoteStation() {
         try {
             await addNote({
                 variables: {
-                    title: noteFormState.title, content: noteFormState.content, binderID: from}
+                    title: noteTitleFormState.title, content: noteFormState, binderID: from}
                     
             });
         } catch (e) {
@@ -57,11 +60,17 @@ function CreateNoteStation() {
 
     const handleNoteFormChange = (event) => {
         const { name, value } = event.target;
-        setNoteFormState({
-            ...noteFormState,
+        setNoteTitleFormState({
+            ...noteTitleFormState,
             [name]: value
-        });
+        })
     }
+
+    const onChangeInEditor = (event, editor) => {
+        const data = editor.getData()
+        setNoteFormState(data);
+        console.log(noteFormState)
+        }
 
     return(
         <div>
@@ -99,10 +108,9 @@ function CreateNoteStation() {
                 <CKEditor
                     editor={ Editor }
                     config={ editorConfiguration }
-                    data="<p></p>"
-
+                    name="content"
                     onChange={ ( event, editor ) => {
-                        const data = editor.getData();
+                        onChangeInEditor(event, editor)
                     } }/>
 </div>
 
