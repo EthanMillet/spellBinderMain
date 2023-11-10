@@ -89,7 +89,7 @@ function CreateNoteStation() {
         type='title'
         id='title'
         onChange={handleNoteFormChange}/>
-</label>
+    </label>
 
     <label htmlFor='content'>Content
     <input 
@@ -98,7 +98,7 @@ function CreateNoteStation() {
         type='content'
         id='content'
         onChange={handleNoteFormChange}/>
-</label>
+    </label>
 
 <button type="submit">Submit</button>
 </form>

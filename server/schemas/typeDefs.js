@@ -36,6 +36,7 @@ type Token {
   title: String
   content: String
   tokenImg: String
+  mapID: Map
 }
 
   type Auth {
@@ -57,7 +58,7 @@ type Mutation {
     addBinder(name: String!): Binder
     addMap(name: String!, imageUrl: String!, binderID: String!): Map
     addNote(title: String!, content: String!, binderID: String!): Note
-    addToken(position: String!, title: String!, content: String!, tokenImg: String!): Token
+    addToken(position: String!, title: String!, content: String!, tokenImg: String!, mapID: String!): Token
     deleteBinder(id: ID!): Binder
     deleteMap(id: ID!): Map
     deleteNote(id: ID!): Note

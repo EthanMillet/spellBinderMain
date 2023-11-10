@@ -6,20 +6,19 @@ const tokenSchema = new Schema({
     position: {
         type: String,
         required: true,
-        unique: true
     },
     title: {
         type: String,
-        required: true,
+
     },
     content: {
         type: String,
-        required: true
+
     },
     tokenImg: {
         type: String,
-        required: true,
-    }
+    },
+    mapID: {type: Schema.Types.ObjectId, ref: 'Maps'}
 })
 
 const Token = mongoose.model('Tokens', tokenSchema);

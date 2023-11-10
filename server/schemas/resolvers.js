@@ -22,7 +22,10 @@ const resolvers = {
           )
         },
         map: async (parent, {_id}) => {
-          return await Maps.findById(_id)
+          return await Maps.findById(_id).populate(
+            [{ path: 'tokens', strictPopulate: false  }
+          ],
+          )
         },
         note: async(parent, {_id}) => {
           return await Notes.findById(_id);
@@ -66,8 +69,8 @@ const resolvers = {
           if (context.user) {
             const token = await Token.create(args);
 
-            await Map.findOneAndUpdate(
-              {_id: args.map},
+            await Maps.findOneAndUpdate(
+              {_id: args.mapID},
               {$push: {tokens: token.id}})
           }
         },

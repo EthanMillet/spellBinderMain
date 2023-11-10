@@ -4,25 +4,38 @@ import { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { useQuery } from '@apollo/client';
 import { Link, useLocation } from 'react-router-dom';
-
+import { ADD_TOKEN } from '../../utils/mutations';
 import { GET_MAP } from '../../utils/queries';
-
-
-import {   MapContainer,
-    ZoomControl,
-    TileLayer,
-    GeoJSON,
-    ImageOverlay } from 'react-leaflet'
+import { MapContainer, useMapEvents, Marker, Popup, ImageOverlay } from 'react-leaflet'
 
 import './map.css'
 import "leaflet/dist/leaflet.css"
 
 
 const M = ({ width, height, zoom, center, data }) => {
+    const [positionState, setPositionState] = useState()
     const wh = [width, 200];
     const origin = [0, 0];
     const bounds = [origin, wh];
-  
+
+  function MapComponent() {
+     useMapEvents({
+      click: (e) => {
+        setPositionState(e.latlng)
+      }
+    })
+    if (positionState !== undefined || positionState != null) {
+          return(
+      <Marker position={positionState}>
+        <Popup>
+          <CreateTokenStation position={positionState}/>
+        </Popup>
+      </Marker>
+    )
+    }
+    return null
+}
+
     return (
       <div style={{ width: "70%", height: "100vh" }}>
         <MapContainer
@@ -42,18 +55,108 @@ const M = ({ width, height, zoom, center, data }) => {
             bounds={bounds}
             className="map_main"
           />
+          <MapComponent/>
+          <TokenLoaderStation/>
         </MapContainer>
       </div>
     );
   };
   
+  function CreateTokenStation(position) {
+
+    const location = useLocation()
+    const { from } = location.state
+
+    const [tokenFormState, setTokenFormState] = useState({title: '', content: '', img: ''})  
+    const [addToken] = useMutation(ADD_TOKEN);
+
+
+    const handleTokenFormSubmit = async (event) => {
+      event.preventDefault();
+      try {
+          await addToken({
+              variables: {
+                  position: "[73.8989223036342, 143.83317663962055]", title: tokenFormState.title, content: tokenFormState.content, tokenImg: "test", mapID: from}
+          });
+      } catch (e) {
+          console.log(e);
+      }
+  };
+
+  const handleTokenFormChange = (event) => {
+      const { name, value } = event.target;
+      setTokenFormState({
+          ...tokenFormState,
+          [name]: value
+      })
+  }
+
+    return(
+<div>
+      <div className='modal-header'>
+        <h2>Create Token at {position.position.lat} {position.position.lng}</h2>
+      </div>
+
+      <div className='modal-body'>
+<form className='form-body' onSubmit={handleTokenFormSubmit}>
+    <label className='label' htmlFor="name">Name</label>
+        <input
+        placeholder='title'
+        name='title'
+        type='title'
+        id='title'
+            onChange={handleTokenFormChange}/>
+            <hr className='form-break'></hr>
+    <label className='label' htmlFor='imageUrl'>imageUrl</label>
+        <input 
+        placeholder='Content'
+        name='content'
+        type='content'
+        id='content'
+        onChange={handleTokenFormChange}/>
+        <hr className='form-break'></hr>
+    <button className="sumbit-button" type="submit">Submit</button>
+</form>
+      </div>
+      
+      </div>
+    )
+  }
+
+  function TokenLoaderStation() {
+    const location = useLocation()
+    const { from } = location.state
+
+    const { loading, error, data } = useQuery(GET_MAP, {
+            variables: {_id: from},
+    });
+
+    if(loading) return "Loading..."
+    if(error) return `${error.message}`;
+
+    return (
+      <div>
+
+      {data.map.tokens?.map((token) => (
+        
+        <Marker key={token._id} position={[62.3295853023709 , 109.98921765300834]}>
+          {console.log(token)}
+          <Popup>
+            <h2>{token.title}</h2>
+            <p>{token.content}</p>
+          </Popup>
+        </Marker>  
+      ))}
+
+
+      
+      </div>
+    )
+  }
 
 function CreateMapStation() {
         const location = useLocation()
         const { from } = location.state
-        
-        const [mapWidthSize, setMapWidthSize] = useState()
-        const [mapHeightSize, setMapHeightSize] = useState()
 
         const { loading, error, data } = useQuery(GET_MAP, {
                 variables: {_id: from},
@@ -62,14 +165,9 @@ function CreateMapStation() {
         if(loading) return "Loading..."
         if(error) return `${error.message}`;
 
-        const position = [0, 0]
-
         const IMG = new Image()
         IMG.src = data.map.imageUrl;
-        IMG.onload = () => {
-            setMapWidthSize(IMG.width)
-            setMapHeightSize(IMG.height)
-        }
+
 
 
     return (

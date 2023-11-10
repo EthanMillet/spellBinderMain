@@ -58,13 +58,16 @@ export const ADD_NOTE = gql`
 `
 
 export const ADD_TOKEN = gql`
-    mutation addToken($position: String, $title: String, $content: String, $tokenImg: String) {
-        addToken(position: $position, title: $title, content: $content, tokenImg: $tokenImg) {
+    mutation addToken($position: String!, $title: String!, $content: String!, $tokenImg: String!, $mapID: String!) {
+        addToken(position: $position, title: $title, content: $content, tokenImg: $tokenImg, mapID: $mapID) {
             _id
             position
             title
             content
             tokenImg
+            mapID {
+              _id
+            }
         }
     }
 `
