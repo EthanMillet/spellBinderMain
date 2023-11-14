@@ -1,12 +1,34 @@
 :root {
-    --background-rgb: 29 30 34;
-    
-    --blue-rgb: 59 190 182;
-    --primary-rgb: var(--blue-rgb);
-    
-  }
+  --black: #111;
+  --dark: #141414;
+  --white: #DAD9D3;
+  --light: #5DA3B3;
+  --mainBrand: #588FBF;
+}
   
-  * {
-    box-sizing: border-box;
-  }
 
+.mapCompContainer {
+  height: auto;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  background-color: var(--dark);
+}
+
+.submapCompContainer {
+  height: auto;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  background-color: white;
+}

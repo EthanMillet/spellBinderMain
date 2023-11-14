@@ -106,7 +106,7 @@ const M = ({ width, height, zoom, center, data }) => {
 }
 
     return (
-      <div style={{ width: "70%", height: "100vh" }}>
+      <div className='mapHolder' style={{ width: "70%", height: "90vh" }}>
         <MapContainer
           style={{ height: "100%", minHeight: "100%" }}
           bounds={zoom ? undefined : bounds}
@@ -288,16 +288,18 @@ function CreateMapStation() {
 
 
     return (
-        <div>
-            <div>
-                <h1>{ data.map._id}</h1>
-                <h2>{ data.map.name }</h2>
-                <h2>{ data.map.imageUrl }</h2>
-                <h2>{from}</h2>
+        <div className='mapCompContainer'>
+            <div className='welcomeBanner'>
+              <div className='banner'>
+                <h2 className='welcomeName'>{ data.map.name }</h2>
+              </div>
             </div>
+            <div style={{ width: "15%", height: "90vh" }}></div>
 
             <M width={IMG.width} height={IMG.height} center={[0, 0]} data={data.map.imageUrl} />
-        </div>
+
+            <div style={{ width: "15%", height: "90vh" }}></div>
+          </div>
     )
 }
 
