@@ -368,6 +368,15 @@
     color: var(--dark);
 }
 
+.showCaseButton a {
+    color: white;
+}
+
+.showCaseButton:hover a {
+    background-color: white;
+    color: var(--dark);
+}
+
 .showCaseContent {
     font-size: 18px;
     color: white;

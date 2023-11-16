@@ -18,6 +18,9 @@ import MapCreatePage from './components/profile/createMap';
 import NoteCreatePage from './components/profile/createNote'
 import Login from './components/login.js';
 import SignUp from './components/signup.js';
+import ExMap from './components/examples/exampleMap.js'
+import ExBinder from './components/examples/exampleBinder.js'
+import ExNote from './components/examples/exampleNote.js'
 
 const httpLink = createHttpLink({
   uri: process.env.herokuLink || 'http://localhost:3001/graphql',
@@ -55,7 +58,9 @@ function App() {
         <Route path="/createMap" element={<MapCreatePage/>}></Route>
         <Route path="/login" element={<Login/>}></Route>
         <Route path="/signup" element={<SignUp/>}></Route>
-
+        <Route path="/exampleBinder" element={<ExBinder/>}></Route>
+        <Route path="/exampleMap" element={<ExMap/>}></Route>
+        <Route path="/exampleNote" element={<ExNote/>}></Route>
 
       </Routes>
       <Footer/>

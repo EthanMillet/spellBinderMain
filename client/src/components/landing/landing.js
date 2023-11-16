@@ -184,7 +184,7 @@ const Landing = () => {
             <div className='Showcase'>
                 <div className='showCaseCircle'><img src={map} alt='Circle' className='showCaseCircleImg'/></div>
                 <h2 className='showCaseHeader'>Maps</h2>
-                <button className='showCaseButton'>View Examples</button>
+                <button className='showCaseButton'><Link to='/exampleMap'><span>View Examples</span></Link></button>
                 <p className='showCaseContentBlue'>These binders serve as enchanted repositories, offering a centralized sanctuary to meticulously organize your notes, elaborate details, and interactive maps. It's akin to having a magical workshop where your ideas seamlessly converge, creating a captivating and harmonious worldbuilding experience.</p>
             </div>
 
@@ -193,7 +193,7 @@ const Landing = () => {
             <div className='Showcase'>
                 <div className='showCaseCircle'><img src={binder} alt='Circle' className='showCaseCircleImg'/></div>
                 <h2 className='showCaseHeader'>Binders</h2>
-                <button className='showCaseButton'>View Examples</button>
+                <button className='showCaseButton'><Link to='/exampleMap'><span>View Examples</span></Link></button>
                 <p className='showCaseContent'>These binders serve as enchanted repositories, offering a centralized sanctuary to meticulously organize your notes, elaborate details, and interactive maps. It's akin to having a magical workshop where your ideas seamlessly converge, creating a captivating and harmonious worldbuilding experience.</p>
             </div>
 
@@ -202,7 +202,7 @@ const Landing = () => {
             <div className='Showcase'>
                 <div className='showCaseCircle'><img src={note} alt='Circle' className='showCaseCircleImg'/></div>
                 <h2 className='showCaseHeader'>Notes</h2>
-                <button className='showCaseButton'>View Examples</button>
+                <button className='showCaseButton'><Link to='/exampleMap'><span>View Examples</span></Link></button>
                 <p className='showCaseContentBlue'>These binders serve as enchanted repositories, offering a centralized sanctuary to meticulously organize your notes, elaborate details, and interactive maps. It's akin to having a magical workshop where your ideas seamlessly converge, creating a captivating and harmonious worldbuilding experience.</p>
             </div>
         </div>
