@@ -375,6 +375,12 @@
     text-align: center;
 }
 
+.showCaseContentBlue{
+    font-size: 18px;
+    color: var(--mainBrand);
+    width: 70%;
+    text-align: center;
+}
 .showcaseDivider {
     width: 1px;
     height: 50%;

@@ -33,7 +33,7 @@ const Landing = () => {
 
                 <div className='IntroLeft'>
                     <h2 className='IntroText'>Where Worlds <br/> Are Built...</h2>
-                    <button className='IntroButton'>Sign Up For Free</button>
+                    <button className='IntroButton'><Link className='button' to='/signup'> <span>Sign Up For Free</span> </Link></button>
                 </div>
 
                 <div className='IntroRight'>
@@ -66,11 +66,12 @@ const Landing = () => {
 
                     <div className='cardContent'>
                     <p className='cardInfo'>
-                        Accent colors should be used sparingly to draw attention to 
-                        important design elements. 
-                        Overuse of accent colors can make your design look haphazard.
+                    Spell Binder empowers you to craft intricate worlds with ease. Create personalized binders for each of your projects, providing a centralized space to organize notes, details, and interactive maps for a seamless worldbuilding experience.
                     </p>
-                    <button className='cardButton'>See More...</button>
+                    <button className='cardButton'      onClick={() => {
+     const anchor = document.querySelector('#reviews-link')
+     anchor.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }}>See More...</button>
                 </div></div>
 
                 <div className='bodyCard'>
@@ -81,11 +82,12 @@ const Landing = () => {
 
                     <div className='cardContent'>
                     <p className='cardInfo'>
-                        Accent colors should be used sparingly to draw attention to 
-                        important design elements. 
-                        Overuse of accent colors can make your design look haphazard.
+                    Dive deep into your created worlds with interactive maps that breathe life into your imagination. Pin locations, add annotations, and create a visual representation of your universe that evolves with your storytelling.
                     </p>
-                    <button className='cardButton'>See More...</button>        
+                    <button className='cardButton'      onClick={() => {
+     const anchor = document.querySelector('#reviews-link')
+     anchor.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }}>See More...</button>        
                 </div>
         </div>
                 <div className='bodyCard'>
@@ -95,11 +97,12 @@ const Landing = () => {
                     </div>
                     <div className='cardContent'>
                     <p className='cardInfo'>
-                        Accent colors should be used sparingly to draw attention to 
-                        important design elements. 
-                        Overuse of accent colors can make your design look haphazard.
+                    Capture every nuance of your world's lore with a comprehensive note-taking system. Spell Binder allows you to jot down details, character backgrounds, and historical events to build a rich tapestry for your narrative.
                     </p>
-                    <button className='cardButton'>See More...</button>
+                    <button className='cardButton'      onClick={() => {
+     const anchor = document.querySelector('#reviews-link')
+     anchor.scrollIntoView({ behavior: 'smooth', block: 'center' })
+    }}>See More...</button>
                 </div>
                 </div>
                 </div>
@@ -111,12 +114,7 @@ const Landing = () => {
             <div className='binderFeature'>
                 <div className='binderLeft'>
                     <h2 className='binderLeftTitle'>Binders</h2>
-                    <p className='binderLeftContent'>Accent colors should be used sparingly to draw
-                     attention to important design elements. 
-                    Overuse of accent colors can make your design look haphazard.
-                    Accent colors should be used sparingly to draw attention to important
-                    design elements. Overuse of accent colors 
-                    can make your design look haphazard.</p>
+                    <p className='binderLeftContent'>Spell Binder empowers you to craft intricate worlds with ease. Create personalized binders for each of your projects, providing a centralized space to organize notes, details, and interactive maps for a seamless worldbuilding experience.</p>
 
                     <div className='CircleContainer'>
                         <div className='contentCircle'><img src={folder} alt='Circle' className='circleImg'/></div>
@@ -138,12 +136,7 @@ const Landing = () => {
             <div className='binderFeature'>
                 <div className='binderLeft'>
                     <h2 className='binderLeftTitle'>Maps</h2>
-                    <p className='binderLeftContent'>Accent colors should be used sparingly to draw
-                     attention to important design elements. 
-                    Overuse of accent colors can make your design look haphazard.
-                    Accent colors should be used sparingly to draw attention to important
-                    design elements. Overuse of accent colors 
-                    can make your design look haphazard.</p>
+                    <p className='binderLeftContent'>Dive deep into your created worlds with interactive maps that breathe life into your imagination. Pin locations, add annotations, and create a visual representation of your universe that evolves with your storytelling.</p>
 
                     <div className='CircleContainer'>
                         <div className='contentCircle'><img src={globe} alt='Circle' className='circleImg'/></div>
@@ -165,12 +158,7 @@ const Landing = () => {
             <div className='binderFeature'>
                 <div className='binderLeft'>
                     <h2 className='binderLeftTitle'>Notes</h2>
-                    <p className='binderLeftContent'>Accent colors should be used sparingly to draw
-                     attention to important design elements. 
-                    Overuse of accent colors can make your design look haphazard.
-                    Accent colors should be used sparingly to draw attention to important
-                    design elements. Overuse of accent colors 
-                    can make your design look haphazard.</p>
+                    <p className='binderLeftContent'>Capture every nuance of your world's lore with a comprehensive note-taking system. Spell Binder allows you to jot down details, character backgrounds, and historical events to build a rich tapestry for your narrative.</p>
 
                     <div className='CircleContainer'>
                         <div className='contentCircle'><img src={quill} alt='Circle' className='circleImg'/></div>
@@ -188,7 +176,7 @@ const Landing = () => {
             </div>
         </div>
 
-        <div className='showCaseThing'>
+        <div className='showCaseThing' id='reviews-link'>
             <div className='ShowtitleContainer'>
                 <h2 className='showCaseTitle'>See Our Feature Showcase</h2>
                 <h3 className='showCasesubTitle'>Get Started Creating Your World</h3>
@@ -197,9 +185,7 @@ const Landing = () => {
                 <div className='showCaseCircle'><img src={map} alt='Circle' className='showCaseCircleImg'/></div>
                 <h2 className='showCaseHeader'>Maps</h2>
                 <button className='showCaseButton'>View Examples</button>
-                <p className='showCaseContent'>Accent colors should be used sparingly to draw attention
-                    to important design elements. 
-                    Overuse of accent colors can make your design look haphazard.</p>
+                <p className='showCaseContentBlue'>These binders serve as enchanted repositories, offering a centralized sanctuary to meticulously organize your notes, elaborate details, and interactive maps. It's akin to having a magical workshop where your ideas seamlessly converge, creating a captivating and harmonious worldbuilding experience.</p>
             </div>
 
             <div className='showcaseDivider'></div>
@@ -208,9 +194,7 @@ const Landing = () => {
                 <div className='showCaseCircle'><img src={binder} alt='Circle' className='showCaseCircleImg'/></div>
                 <h2 className='showCaseHeader'>Binders</h2>
                 <button className='showCaseButton'>View Examples</button>
-                <p className='showCaseContent'>Accent colors should be used sparingly to draw attention
-                    to important design elements. 
-                    Overuse of accent colors can make your design look haphazard.</p>
+                <p className='showCaseContent'>These binders serve as enchanted repositories, offering a centralized sanctuary to meticulously organize your notes, elaborate details, and interactive maps. It's akin to having a magical workshop where your ideas seamlessly converge, creating a captivating and harmonious worldbuilding experience.</p>
             </div>
 
             <div className='showcaseDivider'></div>
@@ -219,9 +203,7 @@ const Landing = () => {
                 <div className='showCaseCircle'><img src={note} alt='Circle' className='showCaseCircleImg'/></div>
                 <h2 className='showCaseHeader'>Notes</h2>
                 <button className='showCaseButton'>View Examples</button>
-                <p className='showCaseContent'>Accent colors should be used sparingly to draw attention
-                    to important design elements. 
-                    Overuse of accent colors can make your design look haphazard.</p>
+                <p className='showCaseContentBlue'>These binders serve as enchanted repositories, offering a centralized sanctuary to meticulously organize your notes, elaborate details, and interactive maps. It's akin to having a magical workshop where your ideas seamlessly converge, creating a captivating and harmonious worldbuilding experience.</p>
             </div>
         </div>
         </div>
